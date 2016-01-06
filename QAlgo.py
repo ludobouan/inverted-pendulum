@@ -33,6 +33,10 @@ log.addHandler(stream)
 
 dbmgr = DbManager.DbManager("testdb.db")
 agent = QAgent.QAgent([-2, -1, 0, 1, 2])
+
+ALPHA = 0.5 #learning rate
+GAMMA = 0.5 #discount factor
+
 # *******************
 # ***** CLasses *****
 # *******************
@@ -47,13 +51,14 @@ def main():
         Q = getQ(S,a) #store Q(s,a)
 
         env.TakeAction(a) # move motor, update env.reward, update env.state
+        ##TIMESLEEP SHOULD BE HERE, no ?
         S = env.state
         R = env.reward
 
         target = R + GAMMA*max([getQ(S, a) for a in agent.actions])
         newQ = Q + ALPHA*(target - Q)
 
-        dbmgr = setQ(S, a, newQ)
+        dbmgr.setQ(S, a, newQ)
 
         time.sleep(0.05)
 
