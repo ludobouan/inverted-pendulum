@@ -10,10 +10,10 @@
 # ***** Imports *****
 # *******************
 import os
-import DbManager
-import logging
 import sys
-
+from DbManager import dbManager
+import logging
+dbmg = dbManager('Qtable')
 # ******************
 # *** Global Var ***
 # ******************
@@ -47,20 +47,22 @@ class QAgent:
             else:
                 i = q.index(maxQ)
      
-           action = self.actions[i]
+            action = self.actions[i]
         return action
 
-    def targetPolicy(self):
+    def targetPolicy(self, state):
         """
-        
         """
         
     def update(self):
         pass
 
     def getQ(self, s, a):
-        try: dbmg.query("SELECT {0} FROM Qvalue WHERE State = {1}".format(a, s))
-        return dbmg.cur.fetchone()
+        dbmg.query("SELECT {0} FROM Qvalue WHERE State = {1}".format(a, s)) 
+        return dbmg.cur.fetchone()[0]
+
+    def setQ(self, s, a, v):
+        dbmg.query("UPDATE Qvalue SET {0} = {1} WHERE State ={2}".format(a, v, s))
 
 # *******************
 # **** Functions ****
@@ -69,5 +71,6 @@ class QAgent:
 # ******************
 # ****** Main ******
 # ******************
-if __name__ == "__main__":
-    pass
+if __name__ == "__main__" and __package__ is None:
+    q = QAgent([-2,-1,0,1,2])
+    print(q.getQ(1.01, 'Action1'))

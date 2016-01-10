@@ -25,7 +25,7 @@ ser = serial.Serial('COM3', 115200)
 # ***** CLasses *****
 # *******************
 
-class env:
+class env():
     """Enviroment"""
     def __init__(self, a_actions):
         # super().__init__()
