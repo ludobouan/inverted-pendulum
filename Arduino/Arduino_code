@@ -1,0 +1,155 @@
+/*
+***************************************
+@author :    Thomas Lefo);
+@contact :   thomas.lefort@ecam.fr
+created on : 06/01/2016
+title :      Code Arduino TIPE
+***************************************
+*/
+
+/* ******************
+   ***   Imports  ***
+   ****************** */
+
+#include "Timer.h"
+
+/* ******************
+   ***   Variables  ***
+   ****************** */
+
+int mspeed = 4000;
+int aspeed = 0;
+int pinA_power = 3;
+int pinA_dir = 2;
+int pinB_power = 9;
+int pinB_dir = 8;
+int angle = 0;
+int encoder0PinA = 5;
+int encoder0PinB = 6;
+int encoder0PinALast = LOW;
+Timer t;
+int lastPos = 0;
+int step_to_go = 0;
+int state = 0;
+int n = LOW;
+String sBuffer = "";
+
+/* ******************
+   ***    Setup   ***
+   ****************** */
+   
+void setup(){
+  Serial.begin(115200);
+  pinMode(pinA_power, OUTPUT);
+  pinMode(pinA_dir, OUTPUT);
+  pinMode(pinB_power, OUTPUT);
+  pinMode(pinB_dir, OUTPUT);
+  pinMode (encoder0PinA,INPUT);
+  pinMode (encoder0PinB,INPUT);
+  digitalWrite (encoder0PinA, HIGH); // Pullup
+  digitalWrite (encoder0PinB, HIGH); 
+  t.every(20, send_values);
+  t.every(10, moteur_move);
+  Serial.println("Debut du script");
+  delay(5000);
+}
+
+/* ******************
+   ***    Loop    ***
+   ****************** */
+
+void loop(){
+  while (Serial.available() > 0) 
+  {
+    // read the incoming byte:
+    sBuffer = sBuffer + char(Serial.read());
+    read_encoder();
+  }
+  read_encoder();
+  if (sBuffer != ""){
+    step_to_go = sBuffer.toInt();
+    sBuffer = "";  
+  }
+  t.update();
+}
+
+/* ******************
+   ***  Functions ***
+   ****************** */
+
+void send_values(){
+  if (angle != lastPos){
+  aspeed = angle - lastPos;
+  if(aspeed > 400){(aspeed = aspeed - 600) * -1;}
+  if(aspeed < -400){(aspeed = aspeed + 600) * -1;}
+  long value = long(angle - 300)*10000 + long(aspeed);
+  Serial.println(value);
+  lastPos = angle;
+  }
+}
+
+void read_encoder(){
+  n = digitalRead(encoder0PinA);
+  if ((encoder0PinALast == LOW) && (n == HIGH)) {
+    if (digitalRead(encoder0PinB) == LOW) {
+      angle--;
+    } else {
+      angle++;
+    }
+  }
+  if(angle == -1){angle = 600;}
+  if(angle == 601){angle = 0;}
+  encoder0PinALast = n;
+}
+
+void moteur_move(){
+  if(step_to_go != 0)
+    {
+      switch(state)
+      {
+      case 0: 
+        digitalWrite(pinA_power,HIGH);
+        digitalWrite(pinB_power,LOW);
+        digitalWrite(pinA_dir,HIGH);
+        digitalWrite(pinB_dir,LOW);
+        state = 1;
+        break;
+
+      case 1:
+        digitalWrite(pinA_power,LOW);
+        digitalWrite(pinB_power,HIGH);
+        digitalWrite(pinA_dir,LOW);
+        digitalWrite(pinB_dir,LOW);
+        state = 2;
+        break;
+        
+      case 2:
+        digitalWrite(pinA_power,HIGH);
+        digitalWrite(pinB_power,LOW);
+        digitalWrite(pinA_dir,LOW);
+        digitalWrite(pinB_dir,LOW);
+        state = 3;
+        break;
+      case 3:
+        digitalWrite(pinA_power,LOW);
+        digitalWrite(pinB_power,HIGH);
+        digitalWrite(pinA_dir,LOW);
+        digitalWrite(pinB_dir,HIGH);
+        state = 0;
+        break;
+    }
+    if(step_to_go>0){step_to_go--;}      //decrement of remaining halfsteps of forward rotation
+    if(step_to_go<0){step_to_go++;}
+  }
+  else{
+    digitalWrite(pinA_power,LOW);
+    digitalWrite(pinB_power,LOW);
+    digitalWrite(pinA_dir,LOW);
+    digitalWrite(pinB_dir,LOW);
+  }
+}
+
+
+
+
+
