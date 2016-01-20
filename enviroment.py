@@ -37,7 +37,8 @@ class env():
         self.reward = self.get_reward()
 
     def get_reward(self):
-        return((-self.angle**2)/100)
+        return (abs(self.angle)-180)**2
+        # return((-self.angle**2)/100)
         
     def read_serial(self):
         line = ser.readline()
