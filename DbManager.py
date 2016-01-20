@@ -23,12 +23,12 @@ class dbManager():
             conn.executescript(schema)
 
             #log 'Inserting initial data'
-            for i in range(16):
-                for j in range(20):
-                    s = i + j*0.01   
+            for i in range(21):
+                for j in range(41):
+                    s = i - 10 + j*0.01   
                     conn.execute("""
                     insert into Qvalue (State, Action1, Action2, Action3, Action4, Action5)
-                    values ({0}, 2, 0, 0, 0, 0)
+                    values ({0}, 0, 0, 0, 0, 1000000)
                     """.format(s))
 
     def __del__(self):

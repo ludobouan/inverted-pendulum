@@ -16,8 +16,10 @@ import time
 import DbManager
 import logging
 import sys
-from QAgent import QAgent
+import QAgent
 import enviroment
+import pdb
+from logging.handlers import RotatingFileHandler
 
 # ******************
 # *** Global Var ***
@@ -34,11 +36,17 @@ stream.setFormatter(formatter)
 
 log.addHandler(stream)
 
-dbmgr = DbManager.DbManager("testdb.db")
+file_handler = RotatingFileHandler('debug.log', 'a', 1000000, 1)
+file_handler.setLevel(logging.DEBUG)
+file_handler.setFormatter(formatter)
+
+log.addHandler(file_handler)
+
+dbmgr = DbManager.dbManager("testdb.db")
 agent = QAgent.QAgent(acts)
 env = enviroment.env(acts)
 
-ALPHA = 0.5 #learning rate
+ALPHA = 0.0 #learning rate
 GAMMA = 0.5 #discount factor
 
 # *******************
@@ -49,24 +57,25 @@ GAMMA = 0.5 #discount factor
 # **** Functions ****
 # *******************
 def main():
-    agent = QAgent([-2,-1,0,1,2])
-    env
+    agent = QAgent.QAgent([-20,-10,0,10,20])
     S = env.state
-    while True:
-        a = agent.policy(S)
-        Q = agent.getQ(S,a) #store Q(s,a)
+    try:
+        while True:
+            a = agent.policy(S)
+            Q = agent.getQ(S,a) #store Q(s,a)
 
-        env.take_action(a) # move motor, update env.reward, update env.state
-        ##TIMESLEEP SHOULD BE HERE, no ?
-        S = env.state
-        R = env.reward
+            env.take_action(a) # move motor, update env.reward, update env.state
+            time.sleep(0.05)
+            S = env.state
+            R = env.reward
 
-        target = R + GAMMA*max([agent.getQ(S, a) for a in agent.actions])
-        newQ = Q + ALPHA*(target - Q)
+            target = R + GAMMA*max([agent.getQ(S, a) for a in agent.actions])
+            newQ = Q + ALPHA*(target - Q)
+            log.debug(newQ)
 
-        agent.setQ(S, a, newQ)
-
-        time.sleep(0.05)
+            agent.setQ(S, a, newQ)    
+    except KeyboardInterrupt: 
+        exit()
 
 # ******************
 # ****** Main ******

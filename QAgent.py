@@ -13,6 +13,7 @@ import os
 import sys
 from DbManager import dbManager
 import logging
+import random
 dbmg = dbManager('Qtable')
 # ******************
 # *** Global Var ***
@@ -22,12 +23,16 @@ dbmg = dbManager('Qtable')
 # ***** CLasses *****
 # *******************
 
+log = logging.getLogger('root')
+dic = {-20:"Action1", -10:"Action2", 0:"Action3", 10:"Action4", 20:"Action5"}
+
 class QAgent:
     """Q-Learning agent"""
     def __init__(self, a_actions):
         # super().__init__()
         self.actions = a_actions
-        self.db_filename = 'test.db'
+        self.db_filename = 'testdb.db'
+        self.epsilon = 0.01
     
     def policy(self, state):
         """
@@ -51,18 +56,18 @@ class QAgent:
         return action
 
     def targetPolicy(self, state):
-        """
-        """
+        pass
         
     def update(self):
         pass
 
     def getQ(self, s, a):
-        dbmg.query("SELECT {0} FROM Qvalue WHERE State = {1}".format(a, s)) 
+        dbmg.query("SELECT {0} FROM Qvalue WHERE State = {1}".format(dic[a], s))
         return dbmg.cur.fetchone()[0]
 
     def setQ(self, s, a, v):
-        dbmg.query("UPDATE Qvalue SET {0} = {1} WHERE State ={2}".format(a, v, s))
+        log.debug(a)
+        dbmg.query("UPDATE Qvalue SET {0} = {1} WHERE State = {2}".format(dic[a], v, s))
 
 # *******************
 # **** Functions ****
