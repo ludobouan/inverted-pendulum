@@ -66,7 +66,6 @@ class QAgent:
         return dbmg.cur.fetchone()[0]
 
     def setQ(self, s, a, v):
-        log.debug(a)
         dbmg.query("UPDATE Qvalue SET {0} = {1} WHERE State = {2}".format(dic[a], v, s))
 
 # *******************

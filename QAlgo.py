@@ -59,19 +59,19 @@ GAMMA = 0.5 #discount factor
 def main():
     agent = QAgent.QAgent([-20,-10,0,10,20])
     S = env.state
+    log.debug("Lancement")
     try:
         while True:
             a = agent.policy(S)
             Q = agent.getQ(S,a) #store Q(s,a)
 
             env.take_action(a) # move motor, update env.reward, update env.state
-            time.sleep(0.05)
+            time.sleep(0.04)
             S = env.state
             R = env.reward
 
             target = R + GAMMA*max([agent.getQ(S, a) for a in agent.actions])
             newQ = Q + ALPHA*(target - Q)
-            log.debug(newQ)
 
             agent.setQ(S, a, newQ)    
     except KeyboardInterrupt: 

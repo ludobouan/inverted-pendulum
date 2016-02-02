@@ -28,7 +28,7 @@ class dbManager():
                     s = i - 10 + j*0.01   
                     conn.execute("""
                     insert into Qvalue (State, Action1, Action2, Action3, Action4, Action5)
-                    values ({0}, 0, 0, 0, 0, 1000000)
+                    values ({0}, 0, 0, 0, 0, 0)
                     """.format(s))
 
     def __del__(self):
