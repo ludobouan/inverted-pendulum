@@ -37,7 +37,7 @@ class env():
         self.reward = self.get_reward()
 
     def get_reward(self):
-        return((-self.angle**2)/100)
+        return ((abs(self.angle)-300)**2)/50
         
     def read_serial(self):
         line = ser.readline()
@@ -46,13 +46,14 @@ class env():
             self.angle = line // 10000
             v = line % 1000
             if v > 500:
-                self.speed = 1000 - v
+                self.speed = -(1000 - v)
             else:
                 self.speed = v
 
     def get_state(self):
         self.read_serial()
-        return self.angle // 30 + (self.speed * 0.1 + 20)//1 * 0.01
+        state = self.angle // 30 + (self.speed * 0.2 + 20)//1 * 0.01
+        return state
         # partie entiere, position (entre -10 et 10) et decimal vitesse angulaire (0 et 40)
 
     def take_action(self, value):

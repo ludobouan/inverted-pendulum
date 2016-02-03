@@ -24,7 +24,7 @@ from logging.handlers import RotatingFileHandler
 # ******************
 # *** Global Var ***
 # ******************
-acts = [-2, -1, 0, 1, 2]
+acts = [-20, -10, 0, 10, 20]
 log = logging.getLogger('root')
 log.setLevel(logging.DEBUG)
 
@@ -44,10 +44,10 @@ log.addHandler(file_handler)
 
 dbmgr = DbManager.dbManager("testdb.db")
 agent = QAgent.QAgent(acts)
+log.debug("Initialisation de la connexion Serial")
 env = enviroment.env(acts)
-
-ALPHA = 0.0 #learning rate
-GAMMA = 0.5 #discount factor
+ALPHA = 0.6 #learning rate
+GAMMA = 0.9 #discount factor
 
 # *******************
 # ***** CLasses *****
@@ -60,21 +60,26 @@ def main():
     agent = QAgent.QAgent([-20,-10,0,10,20])
     S = env.state
     log.debug("Lancement")
+    i = 0
     try:
         while True:
-            a = agent.policy(S)
-            Q = agent.getQ(S,a) #store Q(s,a)
-
-            env.take_action(a) # move motor, update env.reward, update env.state
-            time.sleep(0.04)
-            S = env.state
-            R = env.reward
-
-            target = R + GAMMA*max([agent.getQ(S, a) for a in agent.actions])
-            newQ = Q + ALPHA*(target - Q)
-
-            agent.setQ(S, a, newQ)    
-    except KeyboardInterrupt: 
+             while i < 1000:
+                 a = agent.policy(S)
+                 Q = agent.getQ(S,a) #store Q(s,a)
+                 env.take_action(a) # move motor, update env.reward, update env.state
+                 time.sleep(0.02)
+                 S = env.get_state()
+                 R = env.get_reward()
+                 i += 1
+                 target = R + GAMMA*max([agent.getQ(S, a) for a in agent.actions])
+                 newQ = Q + ALPHA*(target - Q)
+                 agent.setQ(S, a, newQ)
+             log.debug("Debut de la pause")
+             time.sleep(60)
+             i = 0
+             log.debug("Fin de la pause")
+    except KeyboardInterrupt:
+        dbmgr.release()
         exit()
 
 # ******************

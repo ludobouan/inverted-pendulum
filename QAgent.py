@@ -32,7 +32,7 @@ class QAgent:
         # super().__init__()
         self.actions = a_actions
         self.db_filename = 'testdb.db'
-        self.epsilon = 0.01
+        self.epsilon = 0.15
     
     def policy(self, state):
         """
@@ -63,7 +63,12 @@ class QAgent:
 
     def getQ(self, s, a):
         dbmg.query("SELECT {0} FROM Qvalue WHERE State = {1}".format(dic[a], s))
-        return dbmg.cur.fetchone()[0]
+        rep = dbmg.cur.fetchone()
+        if rep is None:
+            repo = 0
+        else:
+            repo = rep[0]
+        return repo
 
     def setQ(self, s, a, v):
         dbmg.query("UPDATE Qvalue SET {0} = {1} WHERE State = {2}".format(dic[a], v, s))
@@ -76,5 +81,5 @@ class QAgent:
 # ****** Main ******
 # ******************
 if __name__ == "__main__" and __package__ is None:
-    q = QAgent([-2,-1,0,1,2])
+    q = QAgent([-20,-10,0,10,20])
     print(q.getQ(1.01, 'Action1'))

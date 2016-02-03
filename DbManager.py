@@ -33,6 +33,9 @@ class dbManager():
 
     def __del__(self):
         self.conn.close()
+    
+    def release(self):
+        self.conn.close()
 
 
 if __name__ == "__main__" and __package__ is None:
