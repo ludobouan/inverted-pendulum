@@ -14,12 +14,14 @@ import DbManager
 import logging
 import sys
 import serial
+import threading
+import time
 
 # ******************
 # *** Global Var ***
 # ******************
 
-ser = serial.Serial('COM3', 115200)
+ser = serial.Serial('/dev/tty.usbmodem1411', 115200)
 
 # *******************
 # ***** CLasses *****
@@ -27,10 +29,11 @@ ser = serial.Serial('COM3', 115200)
 
 log = logging.getLogger('root')
 
-class env():
+class env(threading.Thread):
     """Enviroment"""
     def __init__(self, a_actions):
-        # super().__init__()
+        threading.Thread.__init__(self)
+        self.stopping=False
         self.angle = 0
         self.speed = 0
         self.state = self.get_state()
@@ -59,6 +62,15 @@ class env():
     def take_action(self, value):
         ser.write("{0}\n".format(value).encode())
 
+    def stop(self):
+        self.stopping=True
+        ser.close()
+
+    def run(self):
+        while(not self.stopping):
+            self.read_serial()
+            time.sleep(0.04)
+
 
 # *******************
 # **** Functions ****
@@ -68,4 +80,16 @@ class env():
 # ****** Main ******
 # ******************
 if __name__ == "__main__":
-    pass
+    import time
+    acts = [-20, -10, 0, 10, 20]
+    e = env(acts)
+    e.start()
+    try:
+        while True:
+            #e.read_serial()
+            print e.get_state()
+            time.sleep(0.05)
+    except KeyboardInterrupt:
+        env.stop()
+        ser.close() 
+        exit()

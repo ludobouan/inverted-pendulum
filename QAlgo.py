@@ -13,6 +13,7 @@
 
 import os
 import time
+import thread
 import DbManager
 import logging
 import sys
@@ -46,8 +47,10 @@ dbmgr = DbManager.dbManager("testdb.db")
 agent = QAgent.QAgent(acts)
 log.debug("Initialisation de la connexion Serial")
 env = enviroment.env(acts)
+env.start()
 ALPHA = 0.6 #learning rate
 GAMMA = 0.9 #discount factor
+ON = True
 
 # *******************
 # ***** CLasses *****
@@ -57,29 +60,33 @@ GAMMA = 0.9 #discount factor
 # **** Functions ****
 # *******************
 def main():
-    agent = QAgent.QAgent([-20,-10,0,10,20])
     S = env.state
     log.debug("Lancement")
+    time.sleep(2)
     i = 0
     try:
         while True:
              while i < 1000:
                  a = agent.policy(S)
                  Q = agent.getQ(S,a) #store Q(s,a)
-                 env.take_action(a) # move motor, update env.reward, update env.state
+                 #env.take_action(a) # move motor, update env.reward, update env.state
                  time.sleep(0.02)
                  S = env.get_state()
+                 log.debug(S)
                  R = env.get_reward()
-                 i += 1
                  target = R + GAMMA*max([agent.getQ(S, a) for a in agent.actions])
                  newQ = Q + ALPHA*(target - Q)
                  agent.setQ(S, a, newQ)
+                 i += 1
              log.debug("Debut de la pause")
+             log.debug(airtime)
              time.sleep(60)
              i = 0
              log.debug("Fin de la pause")
     except KeyboardInterrupt:
+        log.debug("EXIT")
         dbmgr.release()
+        env.stop()
         exit()
 
 # ******************
