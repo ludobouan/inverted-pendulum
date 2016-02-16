@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
-import DbManager
+import dbmanager
 import QAgent
 
 acts = [-20, -10, 0, 10, 20]
 
-dbmgr = DbManager.dbManager("testdb.db")
-agent = QAgent.QAgent(acts)
+dbmgr = dbmanager.DbManager("Qdatabase.db")
+agent = QAgent.QAgent()
 
 dic = {0:"Action1", 1:"Action2", 2:"Action3", 3:"Action4", 4:"Action5"}
 
@@ -13,7 +13,7 @@ L={'Action1':[[],[]], 'Action2': [[],[]], 'Action3': [[],[]], 'Action4': [[],[]]
 for i in range(-10,10):
     for j in range(-20,20):
         s = i + (j+20)*0.01
-        P = [agent.getQ(s, a) for a in agent.actions]
+        P = [agent.getQ(s, a) for a in agent.action_list]
         mx=0
         for k in range(4):
             if P[k] > P[mx]:

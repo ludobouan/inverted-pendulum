@@ -9,30 +9,40 @@
 # *******************
 # ***** Imports *****
 # *******************
-import os
-import sys
-from DbManager import dbManager
 import logging
 import random
-dbmg = dbManager('Qtable')
+from ConfigParser import SafeConfigParser
+
+from dbmanager import DbManager
+dbmg = DbManager('Qdatabase.db')
 # ******************
 # *** Global Var ***
 # ******************
+parser = SafeConfigParser()
+parser.read('config.ini')
+
+log = logging.getLogger('root')
 
 # *******************
 # ***** CLasses *****
 # *******************
 
-log = logging.getLogger('root')
-dic = {-20:"Action1", -10:"Action2", 0:"Action3", 10:"Action4", 20:"Action5"}
-
 class QAgent:
     """Q-Learning agent"""
-    def __init__(self, a_actions):
-        # super().__init__()
-        self.actions = a_actions
-        self.db_filename = 'testdb.db'
-        self.epsilon = 0.20
+    def __init__(self):
+        self.action_list = (int(parser.get('Actions','Action1')), 
+                            int(parser.get('Actions','Action2')), 
+                            int(parser.get('Actions','Action3')), 
+                            int(parser.get('Actions','Action4')), 
+                            int(parser.get('Actions','Action5')))
+
+        self.action_names = ("Action1", 
+                             "Action2", 
+                             "Action3", 
+                             "Action4", 
+                             "Action5")
+        
+        self.epsilon = float(parser.get('Coeffs','EPSILON'))
     
     def policy(self, state):
         """
@@ -41,18 +51,18 @@ class QAgent:
         Output: action (int)
         """
         if random.random() < self.epsilon: # exploration
-            action = random.choice(self.actions)
+            action = random.choice(self.action_list)
         else:
-            q = [self.getQ(state, a) for a in self.actions]
-            maxQ = max(q)
-            count = q.count(maxQ)
+            q_list = [self.getQ(state, i_action) for i_action in self.action_list]
+            maxQ = max(q_list)
+            count = q_list.count(maxQ)
             if count > 1:
-                best = [i for i in range(len(self.actions)) if q[i] == maxQ]
+                best = [i for i in range(5) if q_list[i] == maxQ]
                 i = random.choice(best)
             else:
-                i = q.index(maxQ)
+                i = q_list.index(maxQ)
      
-            action = self.actions[i]
+            action = self.action_list[i]
         return action
 
     def targetPolicy(self, state):
@@ -62,7 +72,8 @@ class QAgent:
         pass
 
     def getQ(self, s, a):
-        dbmg.query("SELECT {0} FROM Qvalue WHERE State = {1}".format(dic[a], s))
+        i = self.action_list.index(a)
+        dbmg.query("SELECT {0} FROM Qvalue WHERE State = {1}".format(self.action_names[i], s))
         rep = dbmg.cur.fetchone()
         if rep is None:
             repo = 0
@@ -71,7 +82,9 @@ class QAgent:
         return repo
 
     def setQ(self, s, a, v):
-        dbmg.query("UPDATE Qvalue SET {0} = {1} WHERE State = {2}".format(dic[a], v, s))
+        i = self.action_list.index(a)
+        dbmg.query("UPDATE Qvalue SET {0} = {1} WHERE State = {2}".format(self.action_names[i], v, s))
+        
 
 # *******************
 # **** Functions ****
@@ -81,5 +94,5 @@ class QAgent:
 # ****** Main ******
 # ******************
 if __name__ == "__main__" and __package__ is None:
-    q = QAgent([-20,-10,0,10,20])
-    print(q.getQ(1.01, 'Action1'))
+    agent = QAgent()
+    print agent.policy(1.21)

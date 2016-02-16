@@ -12,19 +12,22 @@
 # *******************
 
 import os
-import time
-import DbManager
-import logging
 import sys
+import time
+
 import QAgent
 import enviroment
-import pdb
-from logging.handlers import RotatingFileHandler
+import dbmanager
 
+import pdb
+import logging
+from ConfigParser import SafeConfigParser
 # ******************
 # *** Global Var ***
 # ******************
-acts = [-20, -10, 0, 10, 20]
+
+from logging.handlers import RotatingFileHandler
+
 log = logging.getLogger('root')
 log.setLevel(logging.DEBUG)
 
@@ -41,14 +44,17 @@ file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(formatter)
 
 log.addHandler(file_handler)
-
-dbmgr = DbManager.dbManager("testdb.db")
-agent = QAgent.QAgent(acts)
 log.debug("Initialisation de la connexion Serial")
-env = enviroment.env(acts)
-ALPHA = 0.6 #learning rate
-GAMMA = 0.9 #discount factor
 
+
+dbmgr = dbmanager.DbManager('Qdatabase.db')
+
+
+parser = SafeConfigParser()
+parser.read('config.ini')
+
+GAMMA = float(parser.get('Coeffs', 'GAMMA'))
+ALPHA = float(parser.get('Coeffs', 'ALPHA'))
 # *******************
 # ***** CLasses *****
 # *******************
@@ -57,38 +63,52 @@ GAMMA = 0.9 #discount factor
 # **** Functions ****
 # *******************
 def main():
-    agent = QAgent.QAgent([-20,-10,0,10,20])
+    env = enviroment.env()
+    log.debug("env set")
+    agent = QAgent.QAgent()
+    log.debug("agent set")
     S = env.state
     log.debug("Lancement")
-    i = 0
-    onair = 0
-    maxonair = 0
+    i=0
+    airtime = 0; max_airtime=0
     try:
         while True:
-             env.vide_serial()
              while i < 500:
-                 a = agent.policy(S)
+                 a = agent.policy(S) #choose action (nombre)
+                 #log.debug("State: {0}".format(S))
+                 #log.debug("Action: {0}".format(a))
                  Q = agent.getQ(S,a) #store Q(s,a)
+                 #log.debug("Stored Q: {0}".format(Q))
                  env.take_action(a) # move motor, update env.reward, update env.state
-                 time.sleep(0.10)
-                 S = env.get_state()
-                 if S < 1 and S > -1:
-                     onair += 1
-                     if onair > maxonair:
-                         maxonair = onair
-                 else:
-                     onair = 0
+                 #log.debug("Action taken")
+                 while env.read_serial():
+                    pass
+                 S2 = env.get_state()
+                 #log.debug("New State: {0}".format(S))
+
+                 if S2 < 1 and S2 > -1:
+                    airtime += 1
+                    if airtime > max_airtime:
+                        max_airtime = airtime
+                 else : airtime = 0
+
                  R = env.get_reward()
+                 #log.debug("Reward: {0}".format(R))
                  i += 1
-                 target = R + GAMMA*max([agent.getQ(S, a) for a in agent.actions])
+                 target = R + GAMMA*max([agent.getQ(S2, i_act) for i_act in agent.action_list])
                  newQ = Q + ALPHA*(target - Q)
+                 #log.debug("New Q: {0}".format(newQ))
                  agent.setQ(S, a, newQ)
+                 #log.debug("new Q set")
+                 #log.debug("-----------------")
+                 S=S2
              log.debug("Debut de la pause")
-             log.debug("Max on air : " + str(maxonair*0.2) + " s")
-             maxonair = 0
-             agent.epsilon = agent.epsilon * 0.95
-             log.debug(agent.epsilon)
+             log.info("AIRTIME : {0}".format(max_airtime))
+             max_airtime = 0
+             parser.set('Progress', 'max_airtime', str(max_airtime))
              time.sleep(45)
+             agent.epsilon = float(parser.get('Coeffs', 'EPSILON'))*0.95
+             parser.set('Coeffs', 'EPSILON', str(agent.epsilon))
              i = 0
              log.debug("Fin de la pause")
     except KeyboardInterrupt:

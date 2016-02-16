@@ -1,8 +1,10 @@
 import sqlite3
-import logging
+#import logging
 import os
 
-class dbManager():
+#log = logging.getLogger('root')
+
+class DbManager():
     def __init__(self, db):
         self.conn = sqlite3.connect(db)
         self.conn.execute('pragma foreign_keys = on')
@@ -17,12 +19,11 @@ class dbManager():
 
     def createDb(self, schema_filename):
         with sqlite3.connect(self.db) as conn:
-            #log 'Creating schema'
             with open(schema_filename, 'rt') as f:
                 schema = f.read()
             conn.executescript(schema)
+            #log.debug('table created')
 
-            #log 'Inserting initial data'
             for i in range(21):
                 for j in range(41):
                     s = i - 10 + j*0.01   
@@ -30,14 +31,18 @@ class dbManager():
                     insert into Qvalue (State, Action1, Action2, Action3, Action4, Action5)
                     values ({0}, 0, 0, 0, 0, 0)
                     """.format(s))
+            #log.info('initial data inserted')
 
     def __del__(self):
         self.conn.close()
+        #log.info('sql connection closed')
     
     def release(self):
         self.conn.close()
+        #log.info('sql connection closed')
 
 
 if __name__ == "__main__" and __package__ is None:
-    db = dbManager('Qtable')
+    #import logSetup
+    db = DbManager('Qdatabase.db')
     db.createDb('schema.sql')
