@@ -15,7 +15,7 @@ for i in range(-10,10):
         s = i + (j+20)*0.01
         P = [agent.getQ(s, a) for a in agent.actions]
         mx=0
-        for k in xrange(4):
+        for k in range(4):
             if P[k] > P[mx]:
                 mx = k 
         L[dic[mx]][0].append(i)

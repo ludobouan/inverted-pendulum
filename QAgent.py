@@ -32,7 +32,7 @@ class QAgent:
         # super().__init__()
         self.actions = a_actions
         self.db_filename = 'testdb.db'
-        self.epsilon = 0.15
+        self.epsilon = 0.20
     
     def policy(self, state):
         """
