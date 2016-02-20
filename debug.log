@@ -10063,3 +10063,1253 @@
 [2016-02-16 18:21:50,327]    DEBUG           QAlgo: Reward: 48
 [2016-02-16 18:21:50,329]    DEBUG           QAlgo: Debut de la pause
 [2016-02-16 18:21:50,329]     INFO           QAlgo: AIRTIME : 2
+[2016-02-19 17:19:54,827]    ERROR      enviroment: Error reading Serial
+[2016-02-19 17:21:16,304]    ERROR      enviroment: Error reading Serial
+[2016-02-19 17:21:20,305]    ERROR      enviroment: Error reading Serial
+[2016-02-19 17:21:22,304]    ERROR      enviroment: Error reading Serial
+[2016-02-19 17:21:24,307]    ERROR      enviroment: Error reading Serial
+[2016-02-19 17:23:52,352]    ERROR      enviroment: Error reading Serial
+[2016-02-19 17:27:52,246]    ERROR      enviroment: Error reading Serial
+[2016-02-19 17:31:03,191]    DEBUG      enviroment: State not sent
+[2016-02-19 21:51:39,245]    DEBUG      enviroment: Error in message : b'I:Arduino Launched\r\n'
+[2016-02-19 21:51:39,257]    DEBUG      enviroment: State not sent
+[2016-02-19 21:51:39,277]    DEBUG      enviroment: Error in message : b'S:-3000300\r\n'
+[2016-02-19 21:51:39,279]    DEBUG      enviroment: State not sent
+[2016-02-19 21:51:43,545]    DEBUG      enviroment: Error in message : b'D:Encoder reset\r\n'
+[2016-02-19 21:51:43,548]    DEBUG      enviroment: State not sent
+[2016-02-19 21:55:20,517]     INFO      enviroment: I:Arduino Launched\r\n'
+[2016-02-19 21:57:06,639]     INFO      enviroment: Arduino Launched
+[2016-02-19 21:57:06,673]    DEBUG           QAlgo: Env set
+[2016-02-19 21:57:06,674]    DEBUG           QAlgo: Agent set
+[2016-02-19 21:57:06,676]     INFO           QAlgo: Starting
+[2016-02-19 22:57:18,357]     INFO      enviroment: Arduino Launched
+[2016-02-19 22:57:18,393]    DEBUG           QAlgo: Env set
+[2016-02-19 22:57:18,394]    DEBUG           QAlgo: Agent set
+[2016-02-19 22:57:18,395]     INFO           QAlgo: Starting
+[2016-02-19 23:10:09,702]     INFO      enviroment: Arduino Launched
+[2016-02-19 23:10:09,734]    DEBUG           QAlgo: Env set
+[2016-02-19 23:10:09,736]    DEBUG           QAlgo: Agent set
+[2016-02-19 23:10:09,737]     INFO           QAlgo: Starting
+[2016-02-19 23:12:16,136]     INFO      enviroment: Arduino Launched
+[2016-02-19 23:12:16,168]    DEBUG           QAlgo: Env set
+[2016-02-19 23:12:16,171]    DEBUG           QAlgo: Agent set
+[2016-02-19 23:12:16,173]     INFO           QAlgo: Starting
+[2016-02-19 23:12:16,176]    DEBUG           QAlgo: State: -11.4
+[2016-02-19 23:12:16,178]    DEBUG           QAlgo: Action: 0
+[2016-02-19 23:12:16,181]    ERROR           QAlgo: Error : <class 'NameError'> - name 'sqlite3' is not defined
+[2016-02-20 12:55:48,408]    ERROR           QAlgo: Error : <class 'NameError'> - name 'ser' is not defined
+[2016-02-20 12:57:57,126]    DEBUG           QAlgo: Env set
+[2016-02-20 12:57:57,127]    DEBUG           QAlgo: Agent set
+[2016-02-20 12:57:57,128]     INFO           QAlgo: Starting
+[2016-02-20 12:57:57,130]    ERROR           QAlgo: Error : <class 'NameError'> - name 'sqlite3' is not defined
+[2016-02-20 13:27:52,109]    DEBUG       DbManager: DbManager init
+[2016-02-20 13:27:52,111]    DEBUG           QAlgo: Env set
+[2016-02-20 13:27:52,112]    DEBUG           QAlgo: Agent set
+[2016-02-20 13:27:52,112]     INFO           QAlgo: Starting
+[2016-02-20 13:27:52,114]    ERROR           QAlgo: Error : <class 'NameError'> - name 'sqlite3' is not defined
+[2016-02-20 13:30:01,141]    DEBUG       DbManager: DbManager init
+[2016-02-20 13:30:01,142]    DEBUG           QAlgo: Env set
+[2016-02-20 13:30:01,143]    DEBUG           QAlgo: Agent set
+[2016-02-20 13:30:01,144]     INFO           QAlgo: Starting
+[2016-02-20 13:30:01,145]    ERROR           QAlgo: Error : <class 'NameError'> - name 'sqlite3' is not defined
+[2016-02-20 13:30:58,692]    DEBUG           QAlgo: True
+[2016-02-20 13:30:58,693]    DEBUG       DbManager: DbManager init
+[2016-02-20 13:30:58,697]    DEBUG           QAlgo: Env set
+[2016-02-20 13:30:58,698]    DEBUG           QAlgo: Agent set
+[2016-02-20 13:30:58,702]     INFO           QAlgo: Starting
+[2016-02-20 13:30:58,704]    ERROR           QAlgo: Error : <class 'NameError'> - name 'sqlite3' is not defined
+[2016-02-20 13:32:06,513]    DEBUG           QAlgo: True
+[2016-02-20 13:32:06,514]    DEBUG       DbManager: DbManager init
+[2016-02-20 13:32:06,515]    DEBUG           QAlgo: Env set
+[2016-02-20 13:32:06,519]    DEBUG           QAlgo: Agent set
+[2016-02-20 13:32:06,521]     INFO           QAlgo: Starting
+[2016-02-20 13:32:06,525]    ERROR           QAlgo: Error : <class 'NameError'> - name 'sqlite3' is not defined
+[2016-02-20 13:32:42,391]    DEBUG           QAlgo: True
+[2016-02-20 13:32:42,392]    DEBUG       DbManager: DbManager init
+[2016-02-20 13:32:42,393]    DEBUG           QAlgo: Env set
+[2016-02-20 13:32:42,394]    DEBUG           QAlgo: Agent set
+[2016-02-20 13:32:42,395]     INFO           QAlgo: Starting
+[2016-02-20 13:32:42,401]    ERROR           QAlgo: Error : <class 'NameError'> - name 'sqlite3' is not defined
+[2016-02-20 13:32:42,409]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 13:32:53,983]    DEBUG           QAlgo: True
+[2016-02-20 13:32:53,984]    DEBUG       DbManager: DbManager init
+[2016-02-20 13:32:53,985]    DEBUG           QAlgo: Env set
+[2016-02-20 13:32:53,989]    DEBUG           QAlgo: Agent set
+[2016-02-20 13:32:53,990]     INFO           QAlgo: Starting
+[2016-02-20 13:32:53,995]    ERROR           QAlgo: Error : <class 'NameError'> - name 'sqlite3' is not defined
+[2016-02-20 13:32:54,002]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 13:35:19,755]    DEBUG           QAlgo: True
+[2016-02-20 13:35:19,756]    DEBUG       DbManager: DbManager init
+[2016-02-20 13:35:19,757]    DEBUG           QAlgo: Env set
+[2016-02-20 13:35:19,758]    DEBUG           QAlgo: Agent set
+[2016-02-20 13:35:19,759]     INFO           QAlgo: Starting
+[2016-02-20 13:35:19,824]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 13:35:19,828]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 17:18:39,895]    DEBUG           QAlgo: True
+[2016-02-20 17:18:39,896]    DEBUG       DbManager: DbManager init
+[2016-02-20 17:18:39,898]     INFO      enviroment: Arduino Launched
+[2016-02-20 17:18:39,933]    DEBUG           QAlgo: Env set
+[2016-02-20 17:18:39,935]    DEBUG           QAlgo: Agent set
+[2016-02-20 17:18:39,937]     INFO           QAlgo: Starting
+[2016-02-20 17:18:39,943]    DEBUG          QAgent: Database Error
+[2016-02-20 17:18:39,945]    ERROR          QAgent: State not find !
+[2016-02-20 17:18:39,952]    DEBUG          QAgent: Database Error
+[2016-02-20 17:18:39,954]    ERROR          QAgent: State not find !
+[2016-02-20 17:18:39,962]    DEBUG          QAgent: Database Error
+[2016-02-20 17:18:39,966]    ERROR          QAgent: State not find !
+[2016-02-20 17:18:39,970]    DEBUG          QAgent: Database Error
+[2016-02-20 17:18:39,974]    ERROR          QAgent: State not find !
+[2016-02-20 17:18:39,978]    DEBUG          QAgent: Database Error
+[2016-02-20 17:18:39,981]    ERROR          QAgent: State not find !
+[2016-02-20 17:18:39,991]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:18:39,995]    DEBUG           QAlgo: Action: 10
+[2016-02-20 17:18:39,999]    DEBUG          QAgent: Database Error
+[2016-02-20 17:18:40,004]    ERROR          QAgent: State not find !
+[2016-02-20 17:18:40,009]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:18:40,013]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:18:40,033]    DEBUG      enviroment: 0
+[2016-02-20 17:18:40,107]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:18:40,110]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:18:40,114]    DEBUG          QAgent: Database Error
+[2016-02-20 17:18:40,119]    ERROR          QAgent: State not find !
+[2016-02-20 17:18:40,126]    DEBUG          QAgent: Database Error
+[2016-02-20 17:18:40,130]    ERROR          QAgent: State not find !
+[2016-02-20 17:18:40,134]    DEBUG          QAgent: Database Error
+[2016-02-20 17:18:40,141]    ERROR          QAgent: State not find !
+[2016-02-20 17:18:40,146]    DEBUG          QAgent: Database Error
+[2016-02-20 17:18:40,149]    ERROR          QAgent: State not find !
+[2016-02-20 17:18:40,154]    DEBUG          QAgent: Database Error
+[2016-02-20 17:18:40,158]    ERROR          QAgent: State not find !
+[2016-02-20 17:18:40,163]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:18:40,216]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 17:18:40,224]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 17:21:38,552]    DEBUG           QAlgo: True
+[2016-02-20 17:21:38,553]    DEBUG       DbManager: DbManager init
+[2016-02-20 17:21:38,555]     INFO      enviroment: Arduino Launched
+[2016-02-20 17:21:38,588]    DEBUG           QAlgo: Env set
+[2016-02-20 17:21:38,589]    DEBUG           QAlgo: Agent set
+[2016-02-20 17:21:38,590]     INFO           QAlgo: Starting
+[2016-02-20 17:21:38,597]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,598]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,604]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,605]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,612]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,613]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,620]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,621]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,627]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,628]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,635]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:21:38,636]    DEBUG           QAlgo: Action: -10
+[2016-02-20 17:21:38,643]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,644]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,650]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:21:38,651]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:21:38,678]    DEBUG      enviroment: 0
+[2016-02-20 17:21:38,756]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:21:38,758]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:21:38,761]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,767]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,771]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,773]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,777]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,780]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,784]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,790]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,793]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,799]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,801]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:21:38,809]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,811]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:21:38,817]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:21:38,820]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:21:38,823]    DEBUG           QAlgo: Action: 0
+[2016-02-20 17:21:38,829]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,832]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,838]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:21:38,841]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:21:38,908]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:21:38,912]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:21:38,916]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,920]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,924]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,928]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,933]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,937]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,942]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,945]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,950]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,958]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,962]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:21:38,966]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,972]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:21:38,974]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:21:38,981]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,983]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:38,991]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:38,993]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,001]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,007]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,010]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,016]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,020]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,026]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,029]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:21:39,035]    DEBUG           QAlgo: Action: 10
+[2016-02-20 17:21:39,038]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,044]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,046]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:21:39,053]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:21:39,071]    DEBUG      enviroment: 0
+[2016-02-20 17:21:39,149]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:21:39,152]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:21:39,154]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,157]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,163]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,166]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,172]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,174]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,182]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,184]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,191]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,193]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,200]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:21:39,202]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,209]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:21:39,211]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:21:39,218]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,220]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,227]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,229]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,236]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,238]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,245]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,247]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,254]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,256]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,263]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:21:39,265]    DEBUG           QAlgo: Action: 30
+[2016-02-20 17:21:39,272]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,274]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,280]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:21:39,283]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:21:39,305]    DEBUG      enviroment: 0
+[2016-02-20 17:21:39,526]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:21:39,527]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:21:39,529]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,535]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,537]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,543]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,544]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,550]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,556]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,557]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,563]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,564]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,571]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:21:39,572]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,578]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:21:39,579]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:21:39,586]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,587]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,594]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,596]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,604]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,608]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,612]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,616]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,620]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,624]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,628]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:21:39,632]    DEBUG           QAlgo: Action: 0
+[2016-02-20 17:21:39,636]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,643]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,647]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:21:39,651]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:21:39,714]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:21:39,716]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:21:39,719]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,725]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,728]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,734]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,737]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,740]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,743]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,746]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,753]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,755]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,761]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:21:39,764]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,770]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:21:39,772]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:21:39,780]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,782]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,789]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,791]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,798]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,800]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,807]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,809]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,816]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,818]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,825]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:21:39,828]    DEBUG           QAlgo: Action: 30
+[2016-02-20 17:21:39,834]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:39,837]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:39,839]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:21:39,846]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:21:39,866]    DEBUG      enviroment: 0
+[2016-02-20 17:21:40,088]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:21:40,092]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:21:40,097]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,100]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,106]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,110]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,115]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,119]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,126]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,129]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,134]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,141]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,145]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:21:40,149]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,154]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:21:40,157]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:21:40,163]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,166]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,175]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,178]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,183]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,191]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,195]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,198]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,203]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,207]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,211]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:21:40,215]    DEBUG           QAlgo: Action: -30
+[2016-02-20 17:21:40,219]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,224]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,228]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:21:40,234]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:21:40,263]    DEBUG      enviroment: 0
+[2016-02-20 17:21:40,485]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:21:40,487]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:21:40,489]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,496]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,498]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,505]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,507]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,514]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,516]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,523]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,526]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,532]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,535]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:21:40,542]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,545]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:21:40,551]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:21:40,554]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,557]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,560]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,563]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,569]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,572]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,579]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,581]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,587]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,588]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,594]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:21:40,595]    DEBUG           QAlgo: Action: 30
+[2016-02-20 17:21:40,602]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,603]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,610]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:21:40,611]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:21:40,632]    DEBUG      enviroment: 0
+[2016-02-20 17:21:40,858]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:21:40,860]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:21:40,864]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,870]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,874]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,877]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,881]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,887]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,892]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,896]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,900]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,903]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,907]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:21:40,910]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,914]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:21:40,916]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:21:40,924]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,927]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,934]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,941]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,944]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,948]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,951]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,958]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,961]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,968]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,971]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:21:40,974]    DEBUG           QAlgo: Action: -10
+[2016-02-20 17:21:40,982]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:40,985]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:40,992]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:21:40,995]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:21:41,020]    DEBUG      enviroment: 0
+[2016-02-20 17:21:41,096]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:21:41,098]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:21:41,102]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,108]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,112]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,115]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,119]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,126]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,129]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,136]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,139]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,142]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,146]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:21:41,150]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,153]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:21:41,156]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:21:41,160]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,163]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,168]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,173]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,177]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,181]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,185]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,192]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,195]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,203]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,206]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:21:41,209]    DEBUG           QAlgo: Action: -10
+[2016-02-20 17:21:41,213]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,216]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,220]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:21:41,223]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:21:41,250]    DEBUG      enviroment: 0
+[2016-02-20 17:21:41,329]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:21:41,332]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:21:41,335]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,341]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,345]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,348]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,352]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,359]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,362]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,366]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,370]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,373]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,380]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:21:41,383]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,390]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:21:41,392]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:21:41,399]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:21:41,402]    DEBUG           QAlgo: Action: 30
+[2016-02-20 17:21:41,410]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,413]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,416]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:21:41,420]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:21:41,443]    DEBUG      enviroment: 0
+[2016-02-20 17:21:41,665]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:21:41,669]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:21:41,673]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,676]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,681]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,685]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,693]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,697]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,701]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,708]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,713]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,716]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,725]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:21:41,729]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,733]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:21:41,737]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:21:41,742]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,746]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,750]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,754]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,758]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,762]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,766]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,770]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,775]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,778]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,782]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:21:41,786]    DEBUG           QAlgo: Action: -10
+[2016-02-20 17:21:41,790]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,795]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,797]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:21:41,804]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:21:41,827]    DEBUG      enviroment: 0
+[2016-02-20 17:21:41,906]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:21:41,907]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:21:41,910]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,916]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,923]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,926]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,933]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,935]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,942]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,944]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,951]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,956]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,959]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:21:41,966]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,968]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:21:41,975]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:21:41,978]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,984]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,990]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:41,992]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:41,999]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:42,001]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:42,008]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:42,011]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:42,019]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:42,021]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:42,024]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:21:42,027]    DEBUG           QAlgo: Action: 30
+[2016-02-20 17:21:42,030]    DEBUG          QAgent: Database Error
+[2016-02-20 17:21:42,036]    ERROR          QAgent: State not find !
+[2016-02-20 17:21:42,039]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:21:42,045]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:21:42,065]    DEBUG      enviroment: 0
+[2016-02-20 17:21:42,254]     INFO           QAlgo: All ended
+[2016-02-20 17:21:42,257]    DEBUG       DbManager: Sql connection closed
+[2016-02-20 17:21:42,261]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 17:25:34,236]    DEBUG           QAlgo: True
+[2016-02-20 17:25:34,237]    DEBUG       DbManager: DbManager init
+[2016-02-20 17:25:34,239]     INFO      enviroment: Arduino Launched
+[2016-02-20 17:25:34,271]    DEBUG           QAlgo: Env set
+[2016-02-20 17:25:34,273]    DEBUG           QAlgo: Agent set
+[2016-02-20 17:25:34,274]     INFO           QAlgo: Starting
+[2016-02-20 17:25:34,275]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,275]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,276]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,277]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,278]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,279]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,280]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,282]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,283]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,284]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,285]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:25:34,286]    DEBUG           QAlgo: Action: 10
+[2016-02-20 17:25:34,287]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,288]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,288]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:25:34,290]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:25:34,308]    DEBUG      enviroment: 0
+[2016-02-20 17:25:34,387]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:25:34,389]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:25:34,391]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,393]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,396]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,398]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,400]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,402]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,405]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,407]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,409]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,411]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,414]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:25:34,423]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,426]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:25:34,432]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:25:34,435]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:25:34,442]    DEBUG           QAlgo: Action: -10
+[2016-02-20 17:25:34,444]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,451]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,453]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:25:34,456]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:25:34,480]    DEBUG      enviroment: 0
+[2016-02-20 17:25:34,558]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:25:34,560]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:25:34,563]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,570]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,573]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,579]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,582]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,588]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,590]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,596]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,597]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,604]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,605]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:25:34,612]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,613]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:25:34,620]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:25:34,622]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,628]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,630]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,636]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,638]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,644]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,646]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,652]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,654]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,661]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,662]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:25:34,669]    DEBUG           QAlgo: Action: 0
+[2016-02-20 17:25:34,670]    DEBUG          QAgent: Database Error
+[2016-02-20 17:25:34,677]    ERROR          QAgent: State not find !
+[2016-02-20 17:25:34,678]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:25:34,685]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:25:34,722]     INFO           QAlgo: All ended
+[2016-02-20 17:25:34,723]    DEBUG       DbManager: Sql connection closed
+[2016-02-20 17:25:34,725]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 17:35:01,978]    DEBUG           QAlgo: False
+[2016-02-20 17:35:01,979]    DEBUG       DbManager: DbManager init
+[2016-02-20 17:35:02,000]    DEBUG       DbManager: Table created
+[2016-02-20 17:35:02,024]    DEBUG       DbManager: Initial data inserted
+[2016-02-20 17:35:02,043]     INFO           QAlgo: Database created
+[2016-02-20 17:35:02,045]     INFO      enviroment: Arduino Launched
+[2016-02-20 17:35:02,078]    DEBUG           QAlgo: Env set
+[2016-02-20 17:35:02,080]    ERROR           QAlgo: Error : <class 'NameError'> - name 'a_dbmg' is not defined
+[2016-02-20 17:35:02,086]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 17:35:20,369]    DEBUG           QAlgo: True
+[2016-02-20 17:35:20,371]    DEBUG       DbManager: DbManager init
+[2016-02-20 17:35:20,373]     INFO      enviroment: Arduino Launched
+[2016-02-20 17:35:20,403]    DEBUG           QAlgo: Env set
+[2016-02-20 17:35:20,404]    DEBUG           QAlgo: Agent set
+[2016-02-20 17:35:20,406]     INFO           QAlgo: Starting
+[2016-02-20 17:35:20,413]    ERROR           QAlgo: Error : <class 'NameError'> - name 'dbmg' is not defined
+[2016-02-20 17:35:20,422]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 17:36:04,785]    DEBUG           QAlgo: True
+[2016-02-20 17:36:04,786]    DEBUG       DbManager: DbManager init
+[2016-02-20 17:36:04,788]     INFO      enviroment: Arduino Launched
+[2016-02-20 17:36:04,818]    DEBUG           QAlgo: Env set
+[2016-02-20 17:36:04,820]    DEBUG           QAlgo: Agent set
+[2016-02-20 17:36:04,822]     INFO           QAlgo: Starting
+[2016-02-20 17:36:04,828]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:36:04,830]    DEBUG           QAlgo: Action: 30
+[2016-02-20 17:36:04,878]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 17:37:13,173]    DEBUG           QAlgo: True
+[2016-02-20 17:37:13,175]    DEBUG       DbManager: DbManager init
+[2016-02-20 17:37:13,178]     INFO      enviroment: Arduino Launched
+[2016-02-20 17:37:13,209]    DEBUG           QAlgo: Env set
+[2016-02-20 17:37:13,210]    DEBUG           QAlgo: Agent set
+[2016-02-20 17:37:13,212]     INFO           QAlgo: Starting
+[2016-02-20 17:37:13,219]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,221]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,227]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,229]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,236]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,238]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:37:13,245]    DEBUG           QAlgo: Action: -10
+[2016-02-20 17:37:13,247]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,254]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:37:13,255]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:37:13,278]    DEBUG      enviroment: 0
+[2016-02-20 17:37:13,357]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:37:13,358]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:37:13,360]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,367]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,369]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,375]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,377]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,384]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:37:13,386]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:37:13,392]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:37:13,394]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,400]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,402]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,408]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,410]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,417]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:37:13,419]    DEBUG           QAlgo: Action: 30
+[2016-02-20 17:37:13,425]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,427]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:37:13,433]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:37:13,454]    DEBUG      enviroment: 0
+[2016-02-20 17:37:13,676]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:37:13,678]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:37:13,680]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,687]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,688]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,695]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,697]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,704]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:37:13,706]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:37:13,712]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:37:13,714]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:37:13,720]    DEBUG           QAlgo: Action: 30
+[2016-02-20 17:37:13,722]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,728]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:37:13,730]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:37:13,749]    DEBUG      enviroment: 0
+[2016-02-20 17:37:13,975]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:37:13,978]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:37:13,982]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,989]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:13,993]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:14,000]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:14,006]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:14,009]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:37:14,013]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:37:14,016]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:37:14,023]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:14,026]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:14,030]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:14,035]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:14,038]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:14,040]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:37:14,046]    DEBUG           QAlgo: Action: -30
+[2016-02-20 17:37:14,048]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:14,055]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:37:14,057]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:37:14,081]     INFO           QAlgo: All ended
+[2016-02-20 17:37:14,082]    DEBUG       DbManager: Sql connection closed
+[2016-02-20 17:37:14,084]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 17:37:25,439]    DEBUG           QAlgo: False
+[2016-02-20 17:37:25,441]    DEBUG       DbManager: DbManager init
+[2016-02-20 17:37:25,459]    DEBUG       DbManager: Table created
+[2016-02-20 17:37:25,482]    DEBUG       DbManager: Initial data inserted
+[2016-02-20 17:37:25,518]     INFO           QAlgo: Database created
+[2016-02-20 17:37:25,520]     INFO      enviroment: Arduino Launched
+[2016-02-20 17:37:25,550]    DEBUG           QAlgo: Env set
+[2016-02-20 17:37:25,553]    DEBUG           QAlgo: Agent set
+[2016-02-20 17:37:25,557]     INFO           QAlgo: Starting
+[2016-02-20 17:37:25,562]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,567]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,573]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,577]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,581]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,585]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:37:25,589]    DEBUG           QAlgo: Action: -30
+[2016-02-20 17:37:25,594]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,597]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:37:25,606]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:37:25,635]    DEBUG      enviroment: 0
+[2016-02-20 17:37:25,857]    DEBUG           QAlgo: New State: -11.4
+[2016-02-20 17:37:25,861]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:37:25,865]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,869]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,874]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,879]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,883]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,889]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:37:25,893]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:37:25,897]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:37:25,900]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,907]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,909]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,916]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,921]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,923]    DEBUG           QAlgo: State: -11.4
+[2016-02-20 17:37:25,929]    DEBUG           QAlgo: Action: -10
+[2016-02-20 17:37:25,931]    ERROR          QAgent: State not find !
+[2016-02-20 17:37:25,937]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:37:25,939]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:37:25,946]     INFO           QAlgo: All ended
+[2016-02-20 17:37:25,950]    DEBUG       DbManager: Sql connection closed
+[2016-02-20 17:37:25,958]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 17:38:23,971]     INFO      enviroment: Arduino Launched
+[2016-02-20 17:38:24,000]     INFO           QAlgo: Starting
+[2016-02-20 17:38:24,002]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,003]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,010]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,011]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,017]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,019]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,124]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,127]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,131]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,135]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,138]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,143]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,146]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,149]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,158]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,161]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,165]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,267]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,269]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,271]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,277]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,279]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,286]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,288]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,295]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,296]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,303]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,305]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,566]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,568]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,570]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,577]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,580]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,587]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,589]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,595]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,597]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,605]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,607]    ERROR          QAgent: State not find !
+[2016-02-20 17:38:24,827]     INFO           QAlgo: All ended
+[2016-02-20 17:39:38,009]     INFO      enviroment: Arduino Launched
+[2016-02-20 17:39:38,040]     INFO           QAlgo: Starting
+[2016-02-20 17:39:38,042]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,143]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,146]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,149]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,156]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,159]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,163]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,166]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,174]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,177]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,181]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,185]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,294]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,297]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,301]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,305]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,309]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,314]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,317]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,323]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,326]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,330]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,334]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,589]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,592]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,596]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,600]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,607]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,611]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,614]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,618]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,622]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,625]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,629]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,737]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,740]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,744]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,747]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,752]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,755]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,757]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,763]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,766]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,773]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,775]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,880]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,882]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,887]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,889]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,896]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:38,898]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,032]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,037]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,041]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,046]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,051]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,056]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,059]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,065]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,072]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,075]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,081]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,155]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,159]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,163]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,167]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,174]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,179]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,183]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,190]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,194]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,198]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,206]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,278]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,282]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,286]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,290]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,294]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,298]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,302]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,306]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,310]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,315]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,323]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,569]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,573]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,577]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,581]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,586]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,590]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,594]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,598]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,607]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,613]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,618]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,687]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,691]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,695]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,700]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,707]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,712]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,716]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,721]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,723]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,729]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,731]    ERROR          QAgent: State not find !
+[2016-02-20 17:39:39,805]     INFO           QAlgo: All ended
+[2016-02-20 17:55:00,197]    DEBUG           QAlgo: True
+[2016-02-20 17:55:00,199]    DEBUG       DbManager: DbManager init
+[2016-02-20 17:55:00,202]     INFO      enviroment: Arduino Launched
+[2016-02-20 17:55:00,234]    DEBUG      enviroment: -301
+[2016-02-20 17:55:00,237]    DEBUG      enviroment: -300
+[2016-02-20 17:55:00,307]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 17:55:17,662]    DEBUG           QAlgo: True
+[2016-02-20 17:55:17,664]    DEBUG       DbManager: DbManager init
+[2016-02-20 17:55:17,669]     INFO      enviroment: Arduino Launched
+[2016-02-20 17:55:17,702]    DEBUG      enviroment: -301
+[2016-02-20 17:55:17,703]    DEBUG      enviroment: -300
+[2016-02-20 17:55:17,704]    DEBUG      enviroment: -10.4
+[2016-02-20 17:55:17,711]    DEBUG           QAlgo: Env set
+[2016-02-20 17:55:17,713]    DEBUG           QAlgo: Agent set
+[2016-02-20 17:55:17,719]     INFO           QAlgo: Starting
+[2016-02-20 17:55:17,722]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,728]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,731]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,741]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,745]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,749]    DEBUG           QAlgo: State: -10.4
+[2016-02-20 17:55:17,755]    DEBUG           QAlgo: Action: 10
+[2016-02-20 17:55:17,759]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,763]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:55:17,771]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:55:17,792]    DEBUG      enviroment: 0
+[2016-02-20 17:55:17,867]    DEBUG      enviroment: -301
+[2016-02-20 17:55:17,870]    DEBUG      enviroment: -300
+[2016-02-20 17:55:17,874]    DEBUG      enviroment: -10.4
+[2016-02-20 17:55:17,878]    DEBUG           QAlgo: New State: -10.4
+[2016-02-20 17:55:17,882]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:55:17,890]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,896]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,906]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,910]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,915]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,917]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:55:17,923]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:55:17,924]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:55:17,932]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,933]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,940]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,942]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,949]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,950]    DEBUG           QAlgo: State: -10.4
+[2016-02-20 17:55:17,957]    DEBUG           QAlgo: Action: 0
+[2016-02-20 17:55:17,958]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:17,965]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:55:17,967]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:55:18,031]    DEBUG      enviroment: -301
+[2016-02-20 17:55:18,034]    DEBUG      enviroment: -300
+[2016-02-20 17:55:18,038]    DEBUG      enviroment: -10.4
+[2016-02-20 17:55:18,042]    DEBUG           QAlgo: New State: -10.4
+[2016-02-20 17:55:18,046]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:55:18,050]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:18,054]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:18,059]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:18,063]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:18,069]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:18,071]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:55:18,078]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:55:18,080]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:55:18,087]    DEBUG           QAlgo: State: -10.4
+[2016-02-20 17:55:18,089]    DEBUG           QAlgo: Action: 10
+[2016-02-20 17:55:18,096]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:18,098]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 17:55:18,105]    DEBUG           QAlgo: Action taken
+[2016-02-20 17:55:18,128]    DEBUG      enviroment: 0
+[2016-02-20 17:55:18,202]    DEBUG      enviroment: -301
+[2016-02-20 17:55:18,204]    DEBUG      enviroment: -300
+[2016-02-20 17:55:18,206]    DEBUG      enviroment: -10.4
+[2016-02-20 17:55:18,213]    DEBUG           QAlgo: New State: -10.4
+[2016-02-20 17:55:18,215]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 17:55:18,222]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:18,224]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:18,231]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:18,233]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:18,236]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:18,242]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 17:55:18,245]    DEBUG           QAlgo: New Q set
+[2016-02-20 17:55:18,251]    DEBUG           QAlgo: -----------------
+[2016-02-20 17:55:18,254]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:18,260]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:18,263]    ERROR          QAgent: State not find !
+[2016-02-20 17:55:18,270]     INFO           QAlgo: All ended
+[2016-02-20 17:55:18,272]    DEBUG       DbManager: Sql connection closed
+[2016-02-20 17:55:18,279]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 18:01:41,558]    DEBUG           QAlgo: True
+[2016-02-20 18:01:41,560]    DEBUG       DbManager: DbManager init
+[2016-02-20 18:01:41,562]     INFO      enviroment: Arduino Launched
+[2016-02-20 18:01:41,596]    DEBUG      enviroment: -301
+[2016-02-20 18:01:41,597]    DEBUG      enviroment: -200
+[2016-02-20 18:01:41,599]    DEBUG      enviroment: -11.2
+[2016-02-20 18:01:41,605]    DEBUG           QAlgo: Env set
+[2016-02-20 18:01:41,607]    DEBUG           QAlgo: Agent set
+[2016-02-20 18:01:41,613]     INFO           QAlgo: Starting
+[2016-02-20 18:01:41,615]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:41,621]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:41,622]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:41,629]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:41,631]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:41,638]    DEBUG           QAlgo: State: -11.2
+[2016-02-20 18:01:41,639]    DEBUG           QAlgo: Action: -30
+[2016-02-20 18:01:41,648]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:41,651]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 18:01:41,655]    DEBUG           QAlgo: Action taken
+[2016-02-20 18:01:41,678]    DEBUG      enviroment: 0
+[2016-02-20 18:01:41,903]    DEBUG      enviroment: -301
+[2016-02-20 18:01:41,906]    DEBUG      enviroment: -200
+[2016-02-20 18:01:41,909]    DEBUG      enviroment: -11.2
+[2016-02-20 18:01:41,913]    DEBUG           QAlgo: New State: -11.2
+[2016-02-20 18:01:41,919]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 18:01:41,920]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:41,927]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:41,928]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:41,935]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:41,937]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:41,943]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 18:01:41,945]    DEBUG           QAlgo: New Q set
+[2016-02-20 18:01:41,952]    DEBUG           QAlgo: -----------------
+[2016-02-20 18:01:41,953]    DEBUG           QAlgo: State: -11.2
+[2016-02-20 18:01:41,960]    DEBUG           QAlgo: Action: 10
+[2016-02-20 18:01:41,961]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:41,968]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 18:01:41,970]    DEBUG           QAlgo: Action taken
+[2016-02-20 18:01:41,993]    DEBUG      enviroment: 0
+[2016-02-20 18:01:42,072]    DEBUG      enviroment: -301
+[2016-02-20 18:01:42,075]    DEBUG      enviroment: -200
+[2016-02-20 18:01:42,078]    DEBUG      enviroment: -11.2
+[2016-02-20 18:01:42,086]    DEBUG           QAlgo: New State: -11.2
+[2016-02-20 18:01:42,090]    DEBUG           QAlgo: Reward: 0.02
+[2016-02-20 18:01:42,095]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:42,099]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:42,103]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:42,107]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:42,111]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:42,115]    DEBUG           QAlgo: New Q: 0.012
+[2016-02-20 18:01:42,120]    DEBUG           QAlgo: New Q set
+[2016-02-20 18:01:42,123]    DEBUG           QAlgo: -----------------
+[2016-02-20 18:01:42,128]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:42,132]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:42,137]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:42,142]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:42,146]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:42,154]    DEBUG           QAlgo: State: -11.2
+[2016-02-20 18:01:42,157]    DEBUG           QAlgo: Action: 30
+[2016-02-20 18:01:42,163]    ERROR          QAgent: State not find !
+[2016-02-20 18:01:42,167]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 18:01:42,170]    DEBUG           QAlgo: Action taken
+[2016-02-20 18:01:42,189]    DEBUG      enviroment: 0
+[2016-02-20 18:01:42,382]     INFO           QAlgo: All ended
+[2016-02-20 18:01:42,384]    DEBUG       DbManager: Sql connection closed
+[2016-02-20 18:01:42,387]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 18:04:52,717]    DEBUG           QAlgo: True
+[2016-02-20 18:04:52,719]    DEBUG       DbManager: DbManager init
+[2016-02-20 18:04:52,720]     INFO      enviroment: Arduino Launched
+[2016-02-20 18:04:52,750]    DEBUG      enviroment: -300
+[2016-02-20 18:04:52,751]    DEBUG      enviroment: -200
+[2016-02-20 18:04:52,752]    DEBUG      enviroment: -10.2
+[2016-02-20 18:04:52,759]    DEBUG           QAlgo: Env set
+[2016-02-20 18:04:52,760]    DEBUG           QAlgo: Agent set
+[2016-02-20 18:04:52,766]     INFO           QAlgo: Starting
+[2016-02-20 18:04:52,767]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:52,773]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:52,774]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:52,781]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:52,782]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:52,788]    DEBUG           QAlgo: State: -10.2
+[2016-02-20 18:04:52,789]    DEBUG           QAlgo: Action: 30
+[2016-02-20 18:04:52,795]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:52,796]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 18:04:52,803]    DEBUG           QAlgo: Action taken
+[2016-02-20 18:04:52,823]    DEBUG      enviroment: 0
+[2016-02-20 18:04:53,041]    DEBUG      enviroment: -300
+[2016-02-20 18:04:53,042]    DEBUG      enviroment: -200
+[2016-02-20 18:04:53,043]    DEBUG      enviroment: -10.2
+[2016-02-20 18:04:53,050]    DEBUG           QAlgo: New State: -10.2
+[2016-02-20 18:04:53,051]    DEBUG           QAlgo: Reward: 0.0
+[2016-02-20 18:04:53,057]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,059]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,065]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,066]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,073]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,074]    DEBUG           QAlgo: New Q: 0.0
+[2016-02-20 18:04:53,081]    DEBUG           QAlgo: New Q set
+[2016-02-20 18:04:53,082]    DEBUG           QAlgo: -----------------
+[2016-02-20 18:04:53,088]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,089]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,096]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,097]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,104]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,106]    DEBUG           QAlgo: State: -10.2
+[2016-02-20 18:04:53,112]    DEBUG           QAlgo: Action: 30
+[2016-02-20 18:04:53,113]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,120]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 18:04:53,121]    DEBUG           QAlgo: Action taken
+[2016-02-20 18:04:53,142]    DEBUG      enviroment: 0
+[2016-02-20 18:04:53,364]    DEBUG      enviroment: -300
+[2016-02-20 18:04:53,365]    DEBUG      enviroment: -200
+[2016-02-20 18:04:53,366]    DEBUG      enviroment: -10.2
+[2016-02-20 18:04:53,372]    DEBUG           QAlgo: New State: -10.2
+[2016-02-20 18:04:53,373]    DEBUG           QAlgo: Reward: 0.0
+[2016-02-20 18:04:53,380]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,381]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,387]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,388]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,394]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,395]    DEBUG           QAlgo: New Q: 0.0
+[2016-02-20 18:04:53,402]    DEBUG           QAlgo: New Q set
+[2016-02-20 18:04:53,402]    DEBUG           QAlgo: -----------------
+[2016-02-20 18:04:53,409]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,410]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,416]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,417]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,423]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,424]    DEBUG           QAlgo: State: -10.2
+[2016-02-20 18:04:53,430]    DEBUG           QAlgo: Action: 10
+[2016-02-20 18:04:53,431]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,437]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 18:04:53,438]    DEBUG           QAlgo: Action taken
+[2016-02-20 18:04:53,458]    DEBUG      enviroment: 0
+[2016-02-20 18:04:53,532]    DEBUG      enviroment: -300
+[2016-02-20 18:04:53,533]    DEBUG      enviroment: -200
+[2016-02-20 18:04:53,534]    DEBUG      enviroment: -10.2
+[2016-02-20 18:04:53,541]    DEBUG           QAlgo: New State: -10.2
+[2016-02-20 18:04:53,542]    DEBUG           QAlgo: Reward: 0.0
+[2016-02-20 18:04:53,548]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,549]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,555]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,556]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,562]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,567]    DEBUG           QAlgo: New Q: 0.0
+[2016-02-20 18:04:53,568]    DEBUG           QAlgo: New Q set
+[2016-02-20 18:04:53,573]    DEBUG           QAlgo: -----------------
+[2016-02-20 18:04:53,574]    DEBUG           QAlgo: State: -10.2
+[2016-02-20 18:04:53,580]    DEBUG           QAlgo: Action: 30
+[2016-02-20 18:04:53,582]    ERROR          QAgent: State not find !
+[2016-02-20 18:04:53,587]     INFO           QAlgo: All ended
+[2016-02-20 18:04:53,589]    DEBUG       DbManager: Sql connection closed
+[2016-02-20 18:04:53,595]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 18:05:58,804]    DEBUG           QAlgo: True
+[2016-02-20 18:05:58,807]    DEBUG       DbManager: DbManager init
+[2016-02-20 18:05:58,809]     INFO      enviroment: Arduino Launched
+[2016-02-20 18:05:58,836]    DEBUG           QAlgo: Env set
+[2016-02-20 18:05:58,837]    DEBUG           QAlgo: Agent set
+[2016-02-20 18:05:58,838]     INFO           QAlgo: Starting
+[2016-02-20 18:05:58,845]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:58,846]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:58,853]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:58,854]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:58,861]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:58,862]    DEBUG           QAlgo: State: -10.2
+[2016-02-20 18:05:58,870]    DEBUG           QAlgo: Action: 30
+[2016-02-20 18:05:58,873]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:58,880]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 18:05:58,883]    DEBUG           QAlgo: Action taken
+[2016-02-20 18:05:58,901]    DEBUG      enviroment: 0
+[2016-02-20 18:05:59,123]    DEBUG           QAlgo: New State: -10.2
+[2016-02-20 18:05:59,126]    DEBUG           QAlgo: Reward: 0.0
+[2016-02-20 18:05:59,131]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:59,137]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:59,141]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:59,145]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:59,153]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:59,157]    DEBUG           QAlgo: New Q: 0.0
+[2016-02-20 18:05:59,161]    DEBUG           QAlgo: New Q set
+[2016-02-20 18:05:59,165]    DEBUG           QAlgo: -----------------
+[2016-02-20 18:05:59,168]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:59,174]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:59,177]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:59,184]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:59,187]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:59,193]    DEBUG           QAlgo: State: -10.2
+[2016-02-20 18:05:59,195]    DEBUG           QAlgo: Action: -30
+[2016-02-20 18:05:59,203]    ERROR          QAgent: State not find !
+[2016-02-20 18:05:59,205]    DEBUG           QAlgo: Stored Q: 0
+[2016-02-20 18:05:59,212]    DEBUG           QAlgo: Action taken
+[2016-02-20 18:05:59,241]    DEBUG      enviroment: 0
+[2016-02-20 18:05:59,429]     INFO           QAlgo: All ended
+[2016-02-20 18:05:59,433]    DEBUG       DbManager: Sql connection closed
+[2016-02-20 18:05:59,437]    DEBUG       DbManager: Sql connection auto closed
+[2016-02-20 18:14:31,784]    DEBUG           QAlgo: True
+[2016-02-20 18:14:31,787]    DEBUG       DbManager: DbManager init
+[2016-02-20 18:14:31,790]     INFO      enviroment: Arduino Launched
+[2016-02-20 18:14:31,821]    DEBUG           QAlgo: Env set
+[2016-02-20 18:14:31,824]    DEBUG           QAlgo: Agent set
+[2016-02-20 18:14:31,827]     INFO           QAlgo: Starting
+[2016-02-20 18:14:31,840]    DEBUG           QAlgo: State: -10.0
+[2016-02-20 18:14:31,843]    DEBUG           QAlgo: Action: 0
+[2016-02-20 18:14:31,847]    DEBUG           QAlgo: Stored Q: 0.0
+[2016-02-20 18:14:31,851]    DEBUG           QAlgo: Action taken
+[2016-02-20 18:14:31,914]    DEBUG           QAlgo: New State: -10.0
+[2016-02-20 18:14:31,918]    DEBUG           QAlgo: Reward: 0.0
+[2016-02-20 18:14:31,923]    DEBUG           QAlgo: New Q: 0.0
+[2016-02-20 18:14:31,943]    DEBUG           QAlgo: New Q set
+[2016-02-20 18:14:31,945]    DEBUG           QAlgo: -----------------
+[2016-02-20 18:14:31,951]    DEBUG           QAlgo: State: -10.0
+[2016-02-20 18:14:31,953]    DEBUG           QAlgo: Action: 0
+[2016-02-20 18:14:31,961]    DEBUG           QAlgo: Stored Q: 0.0
+[2016-02-20 18:14:31,965]    DEBUG           QAlgo: Action taken
+[2016-02-20 18:14:32,033]    DEBUG           QAlgo: New State: -10.0
+[2016-02-20 18:14:32,037]    DEBUG           QAlgo: Reward: 0.0
+[2016-02-20 18:14:32,044]    DEBUG           QAlgo: New Q: 0.0
+[2016-02-20 18:14:32,068]    DEBUG           QAlgo: New Q set
+[2016-02-20 18:14:32,071]    DEBUG           QAlgo: -----------------
+[2016-02-20 18:14:32,077]    DEBUG           QAlgo: State: -10.0
+[2016-02-20 18:14:32,079]    DEBUG           QAlgo: Action: 0
+[2016-02-20 18:14:32,086]    DEBUG           QAlgo: Stored Q: 0.0
+[2016-02-20 18:14:32,089]    DEBUG           QAlgo: Action taken
+[2016-02-20 18:14:32,160]    DEBUG           QAlgo: New State: -10.0
+[2016-02-20 18:14:32,164]    DEBUG           QAlgo: Reward: 0.0
+[2016-02-20 18:14:32,170]    DEBUG           QAlgo: New Q: 0.0
+[2016-02-20 18:14:32,236]    DEBUG           QAlgo: New Q set
+[2016-02-20 18:14:32,239]    DEBUG           QAlgo: -----------------
+[2016-02-20 18:14:32,245]    DEBUG           QAlgo: State: -10.0
+[2016-02-20 18:14:32,252]    DEBUG           QAlgo: Action: 10
+[2016-02-20 18:14:32,256]    DEBUG           QAlgo: Stored Q: 0.0
+[2016-02-20 18:14:32,260]    DEBUG           QAlgo: Action taken
+[2016-02-20 18:14:32,282]    DEBUG      enviroment: 0
+[2016-02-20 18:14:32,357]    DEBUG           QAlgo: New State: -10.0
+[2016-02-20 18:14:32,361]    DEBUG           QAlgo: Reward: 0.0
+[2016-02-20 18:14:32,366]    DEBUG           QAlgo: New Q: 0.0
+[2016-02-20 18:14:32,391]    DEBUG           QAlgo: New Q set
+[2016-02-20 18:14:32,393]    DEBUG           QAlgo: -----------------
+[2016-02-20 18:14:32,396]    DEBUG           QAlgo: State: -10.0
+[2016-02-20 18:14:32,399]    DEBUG           QAlgo: Action: 10
+[2016-02-20 18:14:32,405]    DEBUG           QAlgo: Stored Q: 0.0
+[2016-02-20 18:14:32,406]    DEBUG           QAlgo: Action taken
+[2016-02-20 18:14:32,426]    DEBUG      enviroment: 0
+[2016-02-20 18:14:32,508]    DEBUG           QAlgo: New State: -10.0
+[2016-02-20 18:14:32,509]    DEBUG           QAlgo: Reward: 0.0
+[2016-02-20 18:14:32,510]    DEBUG           QAlgo: New Q: 0.0
+[2016-02-20 18:14:32,534]    DEBUG           QAlgo: New Q set
+[2016-02-20 18:14:32,536]    DEBUG           QAlgo: -----------------
+[2016-02-20 18:14:32,539]    DEBUG           QAlgo: State: -10.0
+[2016-02-20 18:14:32,545]    DEBUG           QAlgo: Action: 10
+[2016-02-20 18:14:32,547]    DEBUG           QAlgo: Stored Q: 0.0
+[2016-02-20 18:14:32,553]    DEBUG           QAlgo: Action taken
+[2016-02-20 18:14:32,573]    DEBUG      enviroment: 0
+[2016-02-20 18:14:32,660]    DEBUG           QAlgo: New State: -10.0
+[2016-02-20 18:14:32,664]    DEBUG           QAlgo: Reward: 0.0
+[2016-02-20 18:14:32,669]    DEBUG           QAlgo: New Q: 0.0
+[2016-02-20 18:14:32,693]    DEBUG           QAlgo: New Q set
+[2016-02-20 18:14:32,696]    DEBUG           QAlgo: -----------------
+[2016-02-20 18:14:32,703]    DEBUG           QAlgo: State: -10.0
+[2016-02-20 18:14:32,706]    DEBUG           QAlgo: Action: 10
+[2016-02-20 18:14:32,710]    DEBUG           QAlgo: Stored Q: 0.0
+[2016-02-20 18:14:32,714]    DEBUG           QAlgo: Action taken
+[2016-02-20 18:14:32,733]    DEBUG      enviroment: 0
+[2016-02-20 18:14:32,778]     INFO           QAlgo: All ended
+[2016-02-20 18:14:32,789]    DEBUG       DbManager: Sql connection closed
+[2016-02-20 18:14:32,793]    DEBUG       DbManager: Sql connection auto closed

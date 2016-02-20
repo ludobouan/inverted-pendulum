@@ -17,9 +17,16 @@ import time
 # *** Global Var ***
 # ******************
 
-ser = serial.Serial('/dev/cu.usbmodem1411', 115200)
-time.sleep(2)
 log = logging.getLogger('root')
+ser_connected = True
+try:
+    ser = serial.Serial('COM3', 115200) # COM3 ou /dev/cu.usbmodem1411
+except serial.serialutil.SerialException:
+    log.error("Aduino not connected")
+    ser_connected = False
+log.info("Initialisation de la connexion Serial")
+time.sleep(3)
+
 # *******************
 # ***** CLasses *****
 # *******************
@@ -37,32 +44,45 @@ class env():
         return ((abs(self.angle)-300)**2)/50
         
     def read_serial(self):
-        line = ser.readline()
-        if line[0] == 'A':
-            return False
-        elif line[0] == 'S':
-            line = int(line[2:])
-            if not line == "":
-                self.angle = line // 10000
-                v = line % 1000
-                if v > 500:
-                    self.speed = -(1000 - v)
-                else:
-                    self.speed = v
-            return True
+        if ser_connected:
+            line = str(ser.readline())
+            if line[2] == 'A':
+                return False
+            elif line[2] == 'S':
+                line = int(line[4:len(line)-5])
+                if not line == "":
+                    self.angle = line // 10000
+                    v = line % 1000
+                    if v > 500:
+                        self.speed = -(1000 - v)
+                    else:
+                        self.speed = v
+                    if self.speed < 0:
+                        self.angle += 1
+                return True
+            elif line[2] == 'D':
+                log.debug(line[4:len(line)-5])
+                return self.read_serial()
+            elif line[2] == 'I':
+                log.info(line[4:len(line)-5])
+                return self.read_serial()
+            else:
+                log.debug("Error in message : " + str(line[4:len(line)-5]))
 
     def get_state(self):
-        ser.write("S:gs\n".encode())
+        if ser_connected:
+            ser.write("S:gs\n".encode())
 
-        while not self.read_serial():
-            log.debug('state not sent')
-            pass
-        state = self.angle // 30 + (self.speed * 0.2 + 20)//1 * 0.01
-        return state
-        # partie entiere, position (entre -10 et 10) et decimal vitesse angulaire (0 et 40)
+            while not self.read_serial():
+                log.debug('State not sent')
+                pass
+            state = self.angle // 30 + (self.speed * 0.2 + 20)//1 * 0.01
+            return state
+            # partie entiere, position (entre -10 et 10) et decimal vitesse angulaire (0 et 40)
 
     def take_action(self, action):
-        ser.write("{0}\n".format(action).encode())
+        if ser_connected:
+            ser.write("{0}\n".format(action).encode())
 
 # *******************
 # **** Functions ****

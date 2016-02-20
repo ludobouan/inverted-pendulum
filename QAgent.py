@@ -11,10 +11,11 @@
 # *******************
 import logging
 import random
-from ConfigParser import SafeConfigParser
+import sqlite3
+from configparser import SafeConfigParser
 
-from dbmanager import DbManager
-dbmg = DbManager('Qdatabase.db')
+from DbManager import DbManager
+
 # ******************
 # *** Global Var ***
 # ******************
@@ -29,7 +30,7 @@ log = logging.getLogger('root')
 
 class QAgent:
     """Q-Learning agent"""
-    def __init__(self):
+    def __init__(self, a_dbmg):
         self.action_list = (int(parser.get('Actions','Action1')), 
                             int(parser.get('Actions','Action2')), 
                             int(parser.get('Actions','Action3')), 
@@ -43,6 +44,8 @@ class QAgent:
                              "Action5")
         
         self.epsilon = float(parser.get('Coeffs','EPSILON'))
+        
+        self.dbmg = a_dbmg
     
     def policy(self, state):
         """
@@ -65,26 +68,26 @@ class QAgent:
             action = self.action_list[i]
         return action
 
-    def targetPolicy(self, state):
-        pass
-        
-    def update(self):
-        pass
-
     def getQ(self, s, a):
         i = self.action_list.index(a)
-        dbmg.query("SELECT {0} FROM Qvalue WHERE State = {1}".format(self.action_names[i], s))
-        rep = dbmg.cur.fetchone()
+        try:
+            self.dbmg.query("SELECT {0} FROM Qvalue WHERE State = {1}".format(self.action_names[i], s))
+        except sqlite3.OperationalError:
+            log.debug("Database Error")
+        rep = self.dbmg.cur.fetchone()
         if rep is None:
             repo = 0
+            log.error("State not find !")
         else:
             repo = rep[0]
         return repo
 
     def setQ(self, s, a, v):
         i = self.action_list.index(a)
-        dbmg.query("UPDATE Qvalue SET {0} = {1} WHERE State = {2}".format(self.action_names[i], v, s))
-        
+        try:
+            self.dbmg.query("UPDATE Qvalue SET {0} = {1} WHERE State = {2}".format(self.action_names[i], v, s))
+        except sqlite3.OperationalError:
+            log.debug("Database Error")
 
 # *******************
 # **** Functions ****
@@ -95,4 +98,4 @@ class QAgent:
 # ******************
 if __name__ == "__main__" and __package__ is None:
     agent = QAgent()
-    print agent.policy(1.21)
+    print(agent.policy(1.21))

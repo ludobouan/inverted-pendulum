@@ -1,8 +1,15 @@
 import sqlite3
-#import logging
+import logging
 import os
+from configparser import SafeConfigParser
 
-#log = logging.getLogger('root')
+log = logging.getLogger('root')
+
+# Config
+parser = SafeConfigParser()
+parser.read('config.ini')
+
+db_name = parser.get('Main', 'DbName')
 
 class DbManager():
     def __init__(self, db):
@@ -11,6 +18,7 @@ class DbManager():
         self.conn.commit()
         self.cur = self.conn.cursor()
         self.db = db
+        log.debug("DbManager init")
 
     def query(self, arg):
         self.cur.execute(arg)
@@ -22,7 +30,7 @@ class DbManager():
             with open(schema_filename, 'rt') as f:
                 schema = f.read()
             conn.executescript(schema)
-            #log.debug('table created')
+            log.debug('Table created')
 
             for i in range(21):
                 for j in range(41):
@@ -31,18 +39,15 @@ class DbManager():
                     insert into Qvalue (State, Action1, Action2, Action3, Action4, Action5)
                     values ({0}, 0, 0, 0, 0, 0)
                     """.format(s))
-            #log.info('initial data inserted')
+            log.debug('Initial data inserted')
 
     def __del__(self):
-        self.conn.close()
-        #log.info('sql connection closed')
+        try:
+            self.conn.close()
+            log.debug('Sql connection auto closed')
+        except:
+            log.error("Cant close db")
     
     def release(self):
         self.conn.close()
-        #log.info('sql connection closed')
-
-
-if __name__ == "__main__" and __package__ is None:
-    #import logSetup
-    db = DbManager('Qdatabase.db')
-    db.createDb('schema.sql')
+        log.debug('Sql connection closed')
