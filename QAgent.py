@@ -53,20 +53,24 @@ class QAgent:
         Input: state (float)
         Output: action (int)
         """
+    
+        q_list = [self.getQ(state, i_action) for i_action in self.action_list]
+        maxQ = max(q_list)
+        count = q_list.count(maxQ)
+        if count > 1:
+            best = [i for i in range(5) if q_list[i] == maxQ]
+            i = random.choice(best)
+        else:
+            i = q_list.index(maxQ)
+ 
+        greedy_action = self.action_list[i]
+
         if random.random() < self.epsilon: # exploration
             action = random.choice(self.action_list)
         else:
-            q_list = [self.getQ(state, i_action) for i_action in self.action_list]
-            maxQ = max(q_list)
-            count = q_list.count(maxQ)
-            if count > 1:
-                best = [i for i in range(5) if q_list[i] == maxQ]
-                i = random.choice(best)
-            else:
-                i = q_list.index(maxQ)
-     
-            action = self.action_list[i]
-        return action
+            action = greedy_action
+        
+        return action, greedy_action
 
     def getQ(self, s, a):
         i = self.action_list.index(a)

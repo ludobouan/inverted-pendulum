@@ -49,39 +49,52 @@ def main():
     agent = QAgent.QAgent(dbmgr)
     log.debug("Agent set")
     S = env.state
+    a = agent.policy(S) #choose action (nombre)
     log.info("Starting")
     i=0
     airtime = 0; max_airtime=0
     try:
         while True:
             while i < 500:
-                a = agent.policy(S) #choose action (nombre)
+                Q = agent.getQ(S,a) #store Q(s,a)
                 log.debug("State: {0}".format(S))
                 log.debug("Action: {0}".format(a))
-                Q = agent.getQ(S,a) #store Q(s,a)
                 log.debug("Stored Q: {0}".format(Q))
+
                 env.take_action(a) # move motor, update env.reward, update env.state
                 log.debug("Action taken")
+
                 while env.read_serial():
                     pass
-                S2 = env.get_state()
+                new_state = env.get_state()
                 log.debug("New State: {0}".format(S))
-                if S2 < 1 and S2 > -1:
+                if new_state < 1 and new_state > -1:
                     airtime += 1
                     if airtime > max_airtime:
                         max_airtime = airtime
                 else : airtime = 0
 
                 R = env.get_reward()
+                new_action, greedy_action = agent.policy(new_state)
                 log.debug("Reward: {0}".format(R))
-                i += abs(S2) // 1
-                target = R + GAMMA*max([agent.getQ(S2, i_act) for i_act in agent.action_list])
-                newQ = Q + ALPHA*(target - Q)
-                log.debug("New Q: {0}".format(newQ))
-                agent.setQ(S, a, newQ)
-                log.debug("New Q set")
+
+                i += abs(new_state) // 1
+
+                target = R + GAMMA*agent.getQ(new_state, greedy_action)
+
+                setE(S, a, getE(S, a)+1)
+
+                for (s,a) in (state action pairs):
+                    newQ = agent.getQ(s,a)+ALPHA*agent.getE(s,a)*(target-Q)
+                    agent.set(s, a, newQ)
+                    if greedy_action = new_action:
+                        setE(s, a, GAMMA*LAMBDA*getE(s,a))
+                    else: 
+                        setE(s, a, 0)
+
+                log.debug("New Qs set")
                 log.debug("-----------------")
-                S=S2
+                S=new_state
             log.info("Pause Started")
             log.info("AIRTIME : {0}".format(max_airtime))
             max_airtime = 0
