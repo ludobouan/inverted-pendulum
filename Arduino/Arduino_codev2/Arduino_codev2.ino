@@ -83,7 +83,7 @@ void read_serial()
 void motor_step(int sens)
 {
     state = positive_modulo(state + sens, 8);
-    if(stepper.distanceToGo() == 6 || stepper.distanceToGo() == -6){
+    if(stepper.distanceToGo() == 5 || stepper.distanceToGo() == -5){
         Serial.println("A:f");
     }
     count_motor = 0;
@@ -155,7 +155,7 @@ inline int positive_modulo(int i, int n)
 void need_to_stop()
 {  
     count_motor++;
-    if(count_motor == 5)
+    if(count_motor == 10)
     {
         digitalWrite(pinA_power,LOW);
         digitalWrite(pinB_power,LOW);
@@ -169,6 +169,8 @@ void need_to_reinit()
     if(count_angle > 50 && count_angle < 70)
     {
         encodeur.write(0);
+        angle_speed = 0;
+        angle = 0;
         Serial.println("D:Encoder reset");
     }
 }
@@ -212,9 +214,9 @@ void setup()
     pinMode(pinB_power, OUTPUT);
     pinMode(pinB_dir, OUTPUT);
   
-    stepper.setMaxSpeed(1500.0);
-    stepper.setAcceleration(1000.0);
-    stepper.setSpeed(1200.0);
+    stepper.setMaxSpeed(1200.0);
+    stepper.setAcceleration(900.0);
+    stepper.setSpeed(1000.0);
   
     t.every(5, read_serial);
     t.every(10, need_to_stop);

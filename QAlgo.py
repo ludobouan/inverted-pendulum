@@ -74,7 +74,7 @@ def main():
 
                 R = env.get_reward()
                 log.debug("Reward: {0}".format(R))
-                i += 1
+                i += abs(S2) // 1
                 target = R + GAMMA*max([agent.getQ(S2, i_act) for i_act in agent.action_list])
                 newQ = Q + ALPHA*(target - Q)
                 log.debug("New Q: {0}".format(newQ))
