@@ -69,7 +69,7 @@ def main():
 
                 while env.read_serial():
                     pass
-                new_state, isUpper = env.get_state()
+                new_state, isUpper == env.get_state()
                 if isUpper = True:
                     new_agent = UpperAgent
                 else: 
@@ -91,7 +91,7 @@ def main():
 
                 setE(S, a, getE(S, a)+1)
 
-                for (s,a) in (state action pairs):
+                for s,a in agent.getStateActionPairs():
                     newQ = agent.getQ(s,a)+ALPHA*agent.getE(s,a)*(target-Q)
                     agent.set(s, a, newQ)
                     if greedy_action = new_action:
@@ -103,6 +103,8 @@ def main():
                 log.debug("-----------------")
                 S=new_state
                 agent = new_agent
+
+
             log.info("Pause Started")
             log.info("AIRTIME : {0}".format(max_airtime))
             max_airtime = 0

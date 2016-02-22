@@ -82,10 +82,31 @@ class QAgent():
             repo = rep[0]
         return repo
 
+    def getE(self, s, a):
+        i = self.action_list.index(a)
+        try:
+            self.dbmg.query("SELECT {0} FROM {2} WHERE State = {1}".format(E, s, self.Evalue_table))
+        except sqlite3.OperationalError:
+            log.debug("Database Error")
+        rep = self.dbmg.cur.fetchone()
+        if rep is None:
+            repo = 0
+            log.error("State not found !")
+        else:
+            repo = rep[0]
+        return repo
+
     def setQ(self, s, a, v):
         i = self.action_list.index(a)
         try:
             self.dbmg.query("UPDATE {3} SET {0} = {1} WHERE State = {2}".format(self.action_names[i], v, s, self.Qvalue_table))
+        except sqlite3.OperationalError:
+            log.debug("Database Error")
+
+    def setE(self, s, a, v):
+        i = self.action_list.index(a)
+        try:
+            self.dbmg.query("UPDATE {3} SET {0} = {1} WHERE State = {2}".format(E, v, s, self.Evalue_table))
         except sqlite3.OperationalError:
             log.debug("Database Error")
 
@@ -102,6 +123,16 @@ class UpperQAgent(QAgent):
 
         super(UpperQAgent, self).__init__(a_dbmg, 'Qvalue_upper')
 
+    def getStateActionPairs(self):
+        states = []
+        for i in range(-4,5):
+            if i != 0:
+                for j in range(-3,4):
+                    if j != 0:
+                        states.append((i,j))
+
+        return [(s, a) for s in states and a in self.action_list]
+
 
 class LowerQAgent(QAgent):
     """docstring for LowerQAgent"""
@@ -113,6 +144,17 @@ class LowerQAgent(QAgent):
                     int(parser.get('Lower','Action5')))
 
         super(LowerQAgent, self).__init__(a_dbmg, 'Qvalue_lower')
+
+
+    def getStateActionPairs(self):
+        states = []
+        for i in range(-7,8):
+            if i != 0:
+                for j in range(-3,4):
+                    if j != 0: 
+                        states.append((i,j))
+
+        return [(s, a) for s in states and a in self.action_list]
         
 # *******************
 # **** Functions ****
