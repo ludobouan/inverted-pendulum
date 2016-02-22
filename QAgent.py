@@ -28,20 +28,16 @@ log = logging.getLogger('root')
 # ***** CLasses *****
 # *******************
 
-class QAgent:
+class QAgent():
     """Q-Learning agent"""
-    def __init__(self, a_dbmg):
-        self.action_list = (int(parser.get('Actions','Action1')), 
-                            int(parser.get('Actions','Action2')), 
-                            int(parser.get('Actions','Action3')), 
-                            int(parser.get('Actions','Action4')), 
-                            int(parser.get('Actions','Action5')))
-
+    def __init__(self, a_dbmg, a_table):
         self.action_names = ("Action1", 
                              "Action2", 
                              "Action3", 
                              "Action4", 
                              "Action5")
+
+        self.Qvalue_table = a_table
         
         self.epsilon = float(parser.get('Coeffs','EPSILON'))
         
@@ -75,7 +71,7 @@ class QAgent:
     def getQ(self, s, a):
         i = self.action_list.index(a)
         try:
-            self.dbmg.query("SELECT {0} FROM Qvalue WHERE State = {1}".format(self.action_names[i], s))
+            self.dbmg.query("SELECT {0} FROM {2} WHERE State = {1}".format(self.action_names[i], s, self.Qvalue_table))
         except sqlite3.OperationalError:
             log.debug("Database Error")
         rep = self.dbmg.cur.fetchone()
@@ -89,10 +85,35 @@ class QAgent:
     def setQ(self, s, a, v):
         i = self.action_list.index(a)
         try:
-            self.dbmg.query("UPDATE Qvalue SET {0} = {1} WHERE State = {2}".format(self.action_names[i], v, s))
+            self.dbmg.query("UPDATE {3} SET {0} = {1} WHERE State = {2}".format(self.action_names[i], v, s, self.Qvalue_table))
         except sqlite3.OperationalError:
             log.debug("Database Error")
 
+
+class UpperQAgent(QAgent):
+    """docstring for UpperQAgent"""
+    def __init__(self, a_dbmg):
+        self.action_list = (int(parser.get('Upper','Action1')), 
+                    int(parser.get('Upper','Action2')), 
+                    int(parser.get('Upper','Action3')), 
+                    int(parser.get('Upper','Action4')), 
+                    int(parser.get('Upper','Action5')))
+
+
+        super(UpperQAgent, self).__init__(a_dbmg, 'Qvalue_upper')
+
+
+class LowerQAgent(QAgent):
+    """docstring for LowerQAgent"""
+    def __init__(self, a_dbmg):
+        self.action_list = (int(parser.get('Lower','Action1')), 
+                    int(parser.get('Lower','Action2')), 
+                    int(parser.get('Lower','Action3')), 
+                    int(parser.get('Lower','Action4')), 
+                    int(parser.get('Lower','Action5')))
+
+        super(LowerQAgent, self).__init__(a_dbmg, 'Qvalue_lower')
+        
 # *******************
 # **** Functions ****
 # *******************

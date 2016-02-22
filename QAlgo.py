@@ -39,16 +39,18 @@ def main():
     log.debug(os.path.isfile(db_name))
     if not os.path.isfile(db_name):
         dbmgr = DbManager.DbManager(db_name)
-        dbmgr.createDb('schema.sql')
+        dbmgr.createDb('schema_1.sql', 'schema_2.sql')
         log.info("Database created")
     else:
         dbmgr = DbManager.DbManager(db_name)
 
     env = enviroment.env()
     log.debug("Env set")
-    agent = QAgent.QAgent(dbmgr)
-    log.debug("Agent set")
+    LowerAgent = QAgent.LowerQAgent(dbmgr)
+    UpperAgent = QAgent.UpperAgent(dbmgr)
+    log.debug("Agents set")
     S = env.state
+    agent = LowerAgent
     a = agent.policy(S) #choose action (nombre)
     log.info("Starting")
     i=0
@@ -56,6 +58,7 @@ def main():
     try:
         while True:
             while i < 500:
+                
                 Q = agent.getQ(S,a) #store Q(s,a)
                 log.debug("State: {0}".format(S))
                 log.debug("Action: {0}".format(a))
@@ -66,7 +69,11 @@ def main():
 
                 while env.read_serial():
                     pass
-                new_state = env.get_state()
+                new_state, isUpper = env.get_state()
+                if isUpper = True:
+                    new_agent = UpperAgent
+                else: 
+                    new_agent = LowerAgent
                 log.debug("New State: {0}".format(S))
                 if new_state < 1 and new_state > -1:
                     airtime += 1
@@ -95,6 +102,7 @@ def main():
                 log.debug("New Qs set")
                 log.debug("-----------------")
                 S=new_state
+                agent = new_agent
             log.info("Pause Started")
             log.info("AIRTIME : {0}".format(max_airtime))
             max_airtime = 0
