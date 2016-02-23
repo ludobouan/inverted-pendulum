@@ -39,7 +39,7 @@ def main():
     log.debug(os.path.isfile(db_name))
     if not os.path.isfile(db_name):
         dbmgr = DbManager.DbManager(db_name)
-        dbmgr.createDb('schema_1.sql', 'schema_2.sql')
+        dbmgr.createDb('schema_1.sql', 'schema_2.sql', 'schema_3.sql', 'schema_4.sql')
         log.info("Database created")
     else:
         dbmgr = DbManager.DbManager(db_name)
@@ -47,11 +47,11 @@ def main():
     env = enviroment.env()
     log.debug("Env set")
     LowerAgent = QAgent.LowerQAgent(dbmgr)
-    UpperAgent = QAgent.UpperAgent(dbmgr)
+    UpperAgent = QAgent.UpperQAgent(dbmgr)
     log.debug("Agents set")
     S = env.state
     agent = LowerAgent
-    a = agent.policy(S) #choose action (nombre)
+    a = agent.policy(S)[0] #choose action (nombre)
     log.info("Starting")
     i=0
     airtime = 0; max_airtime=0
@@ -69,8 +69,8 @@ def main():
 
                 while env.read_serial():
                     pass
-                new_state, isUpper == env.get_state()
-                if isUpper = True:
+                new_state, isUpper = env.get_state()
+                if isUpper == True:
                     new_agent = UpperAgent
                 else: 
                     new_agent = LowerAgent
@@ -88,23 +88,27 @@ def main():
                 i += abs(new_state) // 1
 
                 target = R + GAMMA*agent.getQ(new_state, greedy_action)
+                
+                newQ = Q + ALPHA*(target-Q)
+                agent.setQ(S, a, newQ)
 
-                setE(S, a, getE(S, a)+1)
-
-                for s,a in agent.getStateActionPairs():
-                    newQ = agent.getQ(s,a)+ALPHA*agent.getE(s,a)*(target-Q)
-                    agent.set(s, a, newQ)
-                    if greedy_action = new_action:
-                        setE(s, a, GAMMA*LAMBDA*getE(s,a))
-                    else: 
-                        setE(s, a, 0)
+                agent.setE(S, a, agent.getE(S, a) + 1)
+                Q_rows = agent.getAllQ()
+                E_list = agent.getAllE()
+                for row in Q_rows:
+                    for a_c in row:
+                        k = Q_rows.index(row)
+                        newQ = a_c + ALPHA*E_list[k]*(target-Q)
+                        agent.setQ(agent.State[k], agent.action_list[row.index(a_c)], newQ)
+                if greedy_action == new_action:
+                    agent.setEi("E*GAMMA*LAMBDA")
+                else: 
+                    agent.setEi("E*0")
 
                 log.debug("New Qs set")
                 log.debug("-----------------")
-                S=new_state
+                S = new_state
                 agent = new_agent
-
-
             log.info("Pause Started")
             log.info("AIRTIME : {0}".format(max_airtime))
             max_airtime = 0
@@ -146,6 +150,7 @@ db_name = parser.get('Main', 'DbName')
 #Coeffs
 GAMMA = float(parser.get('Coeffs', 'GAMMA'))
 ALPHA = float(parser.get('Coeffs', 'ALPHA'))
+LAMBDA = float(parser.get('Coeffs', 'LAMBDA'))
 
 #sys.excepthook = general_debug
 

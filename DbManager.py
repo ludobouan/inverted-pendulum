@@ -25,7 +25,7 @@ class DbManager():
         self.conn.commit()
         return self.cur
 
-    def createDb(self, schema_filename_1, schema_filename_2):
+    def createDb(self, schema_filename_1, schema_filename_2, schema_filename_3, schema_filename_4):
         with sqlite3.connect(self.db) as conn:
             with open(schema_filename_1, 'rt') as f:
                 schema = f.read()
@@ -51,7 +51,7 @@ class DbManager():
                 if i != 0:
                     for j in range(-3,4):
                         if j != 0: 
-                            s = str((i,j))
+                            s = i + 0.01 * j
                             conn.execute("""
                             insert into Qvalue_lower (State, Action1, Action2, Action3, Action4, Action5)
                             values ({0}, 0, 0, 0, 0, 0)
@@ -61,7 +61,7 @@ class DbManager():
                 if i != 0:
                     for j in range(-3,4):
                         if j != 0:
-                            s = str((i,j)) 
+                            s = i + 0.01 * j 
                             conn.execute("""
                             insert into Qvalue_upper (State, Action1, Action2, Action3, Action4, Action5)
                             values ({0}, 0, 0, 0, 0, 0)
@@ -71,7 +71,7 @@ class DbManager():
                 if i != 0:
                     for j in range(-3,4):
                         if j != 0: 
-                            s = str((i,j))
+                            s = i + 0.01 * j
                             conn.execute("""
                             insert into Evalue_lower (State, E)
                             values ({0}, 0)
@@ -81,7 +81,7 @@ class DbManager():
                 if i != 0:
                     for j in range(-3,4):
                         if j != 0:
-                            s = str((i,j)) 
+                            s = i + 0.01 * j
                             conn.execute("""
                             insert into Evalue_upper (State, E)
                             values ({0}, 0)

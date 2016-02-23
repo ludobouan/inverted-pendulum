@@ -39,17 +39,17 @@ class env():
         # super().__init__()
         self.angle = 0
         self.speed = 0
-        self.state = self.get_state()
-        self.reward = self.get_reward()
         fichier = open("angle.txt", "r")
         self.angles = fichier.read().split()
         fichier.close()
         fichier = open("speed.txt", "r")
         self.speeds = fichier.read().split()
         fichier.close()
+        self.state = self.get_state()[0]
+        self.reward = self.get_reward()
 
     def get_reward(self):
-        return (math.cos((angle*math.pi)/300)-1 + math.exp(-25*(((angle*math.pi)/300)**2)))
+        return (math.cos((self.angle*math.pi)/300)-1 + math.exp(-25*(((self.angle*math.pi)/300)**2)))
 
     def read_serial(self):
         if ser_connected:
@@ -77,18 +77,24 @@ class env():
             else:
                 log.debug("Error in message : " + str(line[4:len(line)-5]))
     
-    def getAngle(a_angle):
+    def getAngle(self, a_angle):
         for el in self.angles:
             line = el.split(':')
-            if a_angle > int(line[0]) and a_angle < int(line[1]):
-                return int(line[2]), bool(line[3])
+            if a_angle >= int(line[0]) and a_angle < int(line[1]):
+                return int(line[2]), self.str_to_bool(line[3])
         log.error("Angle out of range")
         return 0, False
         
-    def getSpeed(a_speed):
+    def str_to_bool(self, a_str):
+        if a_str == "True":
+            return True
+        if a_str == "False":
+            return False
+        
+    def getSpeed(self, a_speed):
         for el in self.speeds:
             line = el.split(':')
-            if a_speed > int(line[0]) and a_speed < int(line[1]):
+            if a_speed >= int(line[0]) and a_speed < int(line[1]):
                 return int(line[2])
         log.error("Speed out of range")
 
@@ -101,7 +107,7 @@ class env():
                 pass
             angle, isUpper = self.getAngle(self.angle)
             speed = self.getSpeed(self.speed)
-            state = "(" + str(angle) + ", " + str(speed) + ")"
+            state = angle + 0.01 * speed
             return state, isUpper
 
     def take_action(self, action):
