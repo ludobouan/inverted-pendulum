@@ -25,7 +25,7 @@ class DbManager():
         self.conn.commit()
         return self.cur
 
-    def createDb(self, schema_filename_1, schema_filename_2, schema_filename_3, schema_filename_4):
+    def createDb(self, schema_filename_1, schema_filename_2):
         with sqlite3.connect(self.db) as conn:
             with open(schema_filename_1, 'rt') as f:
                 schema = f.read()

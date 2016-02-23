@@ -20,6 +20,7 @@ import logging
 from configparser import SafeConfigParser
 from logging.handlers import RotatingFileHandler
 
+
 # *******************
 # **** Functions ****
 # *******************
@@ -39,7 +40,7 @@ def main():
     log.debug(os.path.isfile(db_name))
     if not os.path.isfile(db_name):
         dbmgr = DbManager.DbManager(db_name)
-        dbmgr.createDb('schema_1.sql', 'schema_2.sql', 'schema_3.sql', 'schema_4.sql')
+        dbmgr.createDb('schema_1.sql', 'schema_2.sql')
         log.info("Database created")
     else:
         dbmgr = DbManager.DbManager(db_name)
@@ -54,10 +55,13 @@ def main():
     a = agent.policy(S)[0] #choose action (nombre)
     log.info("Starting")
     i=0
+    follow_reward = 0
+    list_reward = []
     airtime = 0; max_airtime=0
+    epsilon = float(parser.get('Coeffs', 'epsilon'))
     try:
         while True:
-            while i < 500:
+            while i < 100:
                 
                 Q = agent.getQ(S,a) #store Q(s,a)
                 log.debug("State: {0}".format(S))
@@ -72,7 +76,7 @@ def main():
                 new_state, isUpper = env.get_state()
                 if isUpper == True:
                     new_agent = UpperAgent
-                else: 
+                else:
                     new_agent = LowerAgent
                 log.debug("New State: {0}".format(S))
                 if new_state < 1 and new_state > -1:
@@ -82,12 +86,13 @@ def main():
                 else : airtime = 0
 
                 R = env.get_reward()
-                new_action, greedy_action = agent.policy(new_state)
+                follow_reward += R
+                new_action, greedy_action = new_agent.policy(new_state)
                 log.debug("Reward: {0}".format(R))
 
-                i += abs(new_state) // 1
+                i += 1
 
-                target = R + GAMMA*agent.getQ(new_state, greedy_action)
+                target = R + GAMMA*new_agent.getQ(new_state, greedy_action)
                 
                 newQ = Q + ALPHA*(target-Q)
                 agent.setQ(S, a, newQ)
@@ -95,20 +100,28 @@ def main():
                 log.debug("New Qs set")
                 log.debug("-----------------")
                 S = new_state
+                a = new_action
                 agent = new_agent
             log.info("Pause Started")
             log.info("AIRTIME : {0}".format(max_airtime))
+            follow_reward = follow_reward / 100
+            f = open('recompense_moyene.data', 'a')
+            f.write(str(follow_reward) + ":" + str(max_airtime) + "\n")
+            f.close()
+            log.info("Follow reward : {0}".format(follow_reward))
+            follow_reward = 0
             max_airtime = 0
-            parser.set('Progress', 'max_airtime', str(max_airtime))
             time.sleep(float(parser.get('Main', 'PauseDuration')))
-            agent.epsilon = (float(parser.get('Coeffs', 'EPSILON'))* 0.99) // 0.01 * 0.01  
-            parser.set('Coeffs', 'EPSILON', str(agent.epsilon))
+            epsilon *= 0.99
+            LowerAgent.epsilon = epsilon
+            UpperAgent.epsilon = epsilon
+            parser.set('Coeffs', 'epsilon', str(epsilon))
             i = 0
             log.info("Pause Ended")
     except KeyboardInterrupt:
-        log.info("All ended")
         dbmgr.release()
-        exit()
+        f.close()
+        log.info("All ended")
         
 # ******************
 # *** Global Var ***
@@ -130,16 +143,14 @@ file_handler = RotatingFileHandler('debug.log', 'a', 1000000, 1)
 file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(formatter)
 log.addHandler(file_handler)
-
 #DbManager
 db_name = parser.get('Main', 'DbName')
 
 #Coeffs
-GAMMA = float(parser.get('Coeffs', 'GAMMA'))
-ALPHA = float(parser.get('Coeffs', 'ALPHA'))
-LAMBDA = float(parser.get('Coeffs', 'LAMBDA'))
+GAMMA = float(parser.get('Coeffs', 'gamma'))
+ALPHA = float(parser.get('Coeffs', 'alpha'))
 
-#sys.excepthook = general_debug
+sys.excepthook = general_debug
 
 # ******************
 # ****** Main ******

@@ -40,7 +40,7 @@ class QAgent():
         self.Qvalue_table = "Qvalue_" + a_type
         self.Evalue_table = "Evalue_" + a_type
         
-        self.epsilon = float(parser.get('Coeffs','EPSILON'))
+        self.epsilon = float(parser.get('Coeffs','epsilon'))
         
         self.dbmg = a_dbmg
     
