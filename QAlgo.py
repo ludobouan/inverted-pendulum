@@ -92,19 +92,6 @@ def main():
                 newQ = Q + ALPHA*(target-Q)
                 agent.setQ(S, a, newQ)
 
-                agent.setE(S, a, agent.getE(S, a) + 1)
-                Q_rows = agent.getAllQ()
-                E_list = agent.getAllE()
-                for row in Q_rows:
-                    for a_c in row:
-                        k = Q_rows.index(row)
-                        newQ = a_c + ALPHA*E_list[k]*(target-Q)
-                        agent.setQ(agent.State[k], agent.action_list[row.index(a_c)], newQ)
-                if greedy_action == new_action:
-                    agent.setEi("E*GAMMA*LAMBDA")
-                else: 
-                    agent.setEi("E*0")
-
                 log.debug("New Qs set")
                 log.debug("-----------------")
                 S = new_state

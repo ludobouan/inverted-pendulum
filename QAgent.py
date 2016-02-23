@@ -82,32 +82,6 @@ class QAgent():
         else:
             repo = rep[0]
         return repo
-        
-    def getAllQ(self):
-        try:
-            self.dbmg.query("SELECT Action1, Action2, Action3, Action4, Action5 FROM {0}".format(self.Qvalue_table))
-        except sqlite3.OperationalError:
-            log.debug("Database Error")
-        rep = self.dbmg.cur.fetchall()
-        if rep is None:
-            repo = 0
-            log.error("Db error")
-        else:
-            return rep
-
-    def getE(self, s, a):
-        i = self.action_list.index(a)
-        try:
-            self.dbmg.query("SELECT E FROM {1} WHERE State = {0}".format(s, self.Evalue_table))
-        except sqlite3.OperationalError:
-            log.debug("Database Error")
-        rep = self.dbmg.cur.fetchone()
-        if rep is None:
-            repo = 0
-            log.error("State not found !")
-        else:
-            repo = rep[0]
-        return repo
 
     def setQ(self, s, a, v):
         i = self.action_list.index(a)
@@ -115,35 +89,6 @@ class QAgent():
             self.dbmg.query("UPDATE {3} SET {0} = {1} WHERE State = {2}".format(self.action_names[i], v, s, self.Qvalue_table))
         except sqlite3.OperationalError:
             log.debug("Database Error")
-
-    def setEi(self,a_str):
-        try:
-            self.dbmg.query("UPDATE {0} SET E = {1}".format(self.Evalue_table, a_str))
-        except sqlite3.OperationalError:
-            log.debug("Database Error")
-            
-    def setE(self, s, a, v):
-        i = self.action_list.index(a)
-        try:
-            self.dbmg.query("UPDATE {2} SET E = {0} WHERE State = {1}".format(v, s, self.Evalue_table))
-        except sqlite3.OperationalError:
-            log.debug("Database Error")
-            
-    def getAllE(self):
-        try:
-            self.dbmg.query("SELECT E FROM {0}".format(self.Evalue_table))
-        except sqlite3.OperationalError:
-            log.debug("Database Error")
-        rep = self.dbmg.cur.fetchall()
-        if rep is None:
-            repo = 0
-            log.error("Db error")
-        else:
-            E_list = []
-            for row in rep:
-                E_list.append(row[0])
-        return E_list
-
 
 class UpperQAgent(QAgent):
     """docstring for UpperQAgent"""
@@ -156,19 +101,6 @@ class UpperQAgent(QAgent):
 
 
         super(UpperQAgent, self).__init__(a_dbmg, 'upper')
-        
-        self.State = self.getStates()
-
-    def getStates(self):
-        states = []
-        for i in range(-4,5):
-            if i != 0:
-                for j in range(-3,4):
-                    if j != 0:
-                        states.append(i + 0.01 * j)
-
-        return states
-
 
 class LowerQAgent(QAgent):
     """docstring for LowerQAgent"""
@@ -181,15 +113,3 @@ class LowerQAgent(QAgent):
 
         super(LowerQAgent, self).__init__(a_dbmg, 'lower')
         
-        self.State = self.getStates()
-
-
-    def getStates(self):
-        states = []
-        for i in range(-7,8):
-            if i != 0:
-                for j in range(-3,4):
-                    if j != 0:
-                        states.append(i + 0.01 * j)
-
-        return states

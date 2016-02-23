@@ -83,7 +83,7 @@ void read_serial()
 void motor_step(int sens)
 {
     state = positive_modulo(state + sens, 8);
-    if(stepper.distanceToGo() == 5 || stepper.distanceToGo() == -5){
+    if(stepper.distanceToGo() == 7 || stepper.distanceToGo() == -7){
         Serial.println("A:f");
     }
     count_motor = 0;

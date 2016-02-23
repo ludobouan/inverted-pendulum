@@ -36,16 +36,6 @@ class DbManager():
                 schema = f.read()
             conn.executescript(schema)
             log.debug('Table Qvalue_upper created')
-            
-            with open(schema_filename_3, 'rt') as f:
-                schema = f.read()
-            conn.executescript(schema)
-            log.debug('Table Evalue_lower created')
-            
-            with open(schema_filename_4, 'rt') as f:
-                schema = f.read()
-            conn.executescript(schema)
-            log.debug('Table Evalue_upper created')
 
             for i in range(-7,8):
                 if i != 0:
@@ -65,26 +55,6 @@ class DbManager():
                             conn.execute("""
                             insert into Qvalue_upper (State, Action1, Action2, Action3, Action4, Action5)
                             values ({0}, 0, 0, 0, 0, 0)
-                            """.format(s))
-                            
-            for i in range(-7,8):
-                if i != 0:
-                    for j in range(-3,4):
-                        if j != 0: 
-                            s = i + 0.01 * j
-                            conn.execute("""
-                            insert into Evalue_lower (State, E)
-                            values ({0}, 0)
-                            """.format(s))
-
-            for i in range(-4,5):
-                if i != 0:
-                    for j in range(-3,4):
-                        if j != 0:
-                            s = i + 0.01 * j
-                            conn.execute("""
-                            insert into Evalue_upper (State, E)
-                            values ({0}, 0)
                             """.format(s))
 
             log.debug('Initial data inserted')
