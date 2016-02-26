@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-f = open('recompense_moyene.data', 'r')
+f = open('recompense_moyenne.data', 'r')
 lines = f.read().split()
 f.close()
 reward = []
@@ -13,6 +13,6 @@ for line in lines:
     x.append(i)
     reward.append(line[0])
     airtime.append(line[1])
-plt.plot(x, airtime)
 plt.plot(x, reward)
+plt.plot(x, airtime)
 plt.show()

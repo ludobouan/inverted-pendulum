@@ -1,6 +1,6 @@
 -- Schema for Q-learning
 
-create table Qvalue_lower (
+create table Qvalue (
     State       float primary key,
     Action1     float,
     Action2     float,

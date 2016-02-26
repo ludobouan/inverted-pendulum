@@ -28,17 +28,9 @@ log = logging.getLogger('root')
 # ***** CLasses *****
 # *******************
 
-class QAgent():
+class QAgent(object):
     """Q-Learning agent"""
-    def __init__(self, a_dbmg, a_type):
-        self.action_names = ("Action1", 
-                             "Action2", 
-                             "Action3", 
-                             "Action4", 
-                             "Action5")
-
-        self.Qvalue_table = "Qvalue_" + a_type
-        self.Evalue_table = "Evalue_" + a_type
+    def __init__(self, a_dbmg):
         
         self.epsilon = float(parser.get('Coeffs','epsilon'))
         
@@ -55,7 +47,7 @@ class QAgent():
         maxQ = max(q_list)
         count = q_list.count(maxQ)
         if count > 1:
-            best = [i for i in range(5) if q_list[i] == maxQ]
+            best = [i for i in range(len(q_list)) if q_list[i] == maxQ]
             i = random.choice(best)
         else:
             i = q_list.index(maxQ)
@@ -70,15 +62,18 @@ class QAgent():
         return action, greedy_action
 
     def getQ(self, s, a):
-        i = self.action_list.index(a)
         try:
-            self.dbmg.query("SELECT {0} FROM {2} WHERE State = {1}".format(self.action_names[i], s, self.Qvalue_table))
+            i = self.action_list.index(a)
+        except ValueError:
+            log.error("Action not in the list : " + str(a) + " - " + str(self.action_list) + " - " + str(s))
+        try:
+            self.dbmg.query("SELECT {0} FROM Qvalue WHERE State = {1}".format(self.action_names[i], s))
         except sqlite3.OperationalError:
             log.debug("Database Error")
         rep = self.dbmg.cur.fetchone()
         if rep is None:
             repo = 0
-            log.error("State not found !")
+            log.error("State not find !")
         else:
             repo = rep[0]
         return repo
@@ -86,30 +81,30 @@ class QAgent():
     def setQ(self, s, a, v):
         i = self.action_list.index(a)
         try:
-            self.dbmg.query("UPDATE {3} SET {0} = {1} WHERE State = {2}".format(self.action_names[i], v, s, self.Qvalue_table))
+            self.dbmg.query("UPDATE Qvalue SET {0} = {1} WHERE State = {2}".format(self.action_names[i], v, s))
         except sqlite3.OperationalError:
             log.debug("Database Error")
 
-class UpperQAgent(QAgent):
-    """docstring for UpperQAgent"""
+class QAgentLower(QAgent):
+    """docstring for QAgentLower"""
     def __init__(self, a_dbmg):
-        self.action_list = (int(parser.get('Upper','Action1')), 
-                    int(parser.get('Upper','Action2')), 
-                    int(parser.get('Upper','Action3')), 
-                    int(parser.get('Upper','Action4')), 
-                    int(parser.get('Upper','Action5')))
+        self.action_names = ['Action1', 'Action3','Action5']
+        self.action_list = (int(parser.get('Actions','Action1')), 
+                            int(parser.get('Actions','Action3')),                          
+                            int(parser.get('Actions','Action5')))
 
+        super(QAgentLower, self).__init__(a_dbmg)
 
-        super(UpperQAgent, self).__init__(a_dbmg, 'upper')
-
-class LowerQAgent(QAgent):
-    """docstring for LowerQAgent"""
+class QAgentUpper(QAgent):
+    """docstring for QAgentUpper"""
     def __init__(self, a_dbmg):
-        self.action_list = (int(parser.get('Lower','Action1')), 
-                    int(parser.get('Lower','Action2')), 
-                    int(parser.get('Lower','Action3')), 
-                    int(parser.get('Lower','Action4')), 
-                    int(parser.get('Lower','Action5')))
+        self.action_names = ['Action2', 'Action3','Action4']
+        self.action_list = (int(parser.get('Actions','Action2')), 
+                            int(parser.get('Actions','Action3')),                          
+                            int(parser.get('Actions','Action4')))
 
-        super(LowerQAgent, self).__init__(a_dbmg, 'lower')
+        super(QAgentUpper, self).__init__(a_dbmg)
+
+        
+        
         
