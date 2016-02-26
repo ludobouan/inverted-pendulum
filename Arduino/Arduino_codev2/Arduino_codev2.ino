@@ -70,6 +70,9 @@ void read_serial()
                 delay(10);
                 Serial.println("A:f");
             }
+            else if (sBuffer.toInt() == -5 || sBuffer.toInt() == 5){
+                Serial.println("A:f");
+            }
             else
             {
                 Serial.println("D:" + String(stepper.distanceToGo()));
@@ -83,7 +86,7 @@ void read_serial()
 void motor_step(int sens)
 {
     state = positive_modulo(state + sens, 8);
-    if(stepper.distanceToGo() == 5 || stepper.distanceToGo() == -5){
+    if(stepper.distanceToGo() == 7 || stepper.distanceToGo() == -7){
         Serial.println("A:f");
     }
     count_motor = 0;
@@ -171,7 +174,7 @@ void need_to_reinit()
         encodeur.write(0);
         angle_speed = 0;
         angle = 0;
-        Serial.println("D:Encoder reset");
+        Serial.println("I:Encoder reset");
     }
 }
 
@@ -193,9 +196,9 @@ void update_state()
 
 void send_state()
 {
-    if(angle_speed > 100){angle_speed = 100;}
+    if(angle_speed > 99){angle_speed = 99;}
     if(angle_speed < -100){angle_speed = -100;}
-    if(angle > 300){angle = 300;}
+    if(angle > 299){angle = 299;}
     if(angle < -300){angle = -300;}
     long value = long(angle)*10000 + long(angle_speed);
     Serial.println("S:" + String(value));
