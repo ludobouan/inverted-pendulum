@@ -53,8 +53,12 @@ class env():
     def read_serial(self):
         if ser_connected:
             line = str(ser.readline())
+
+            # Motor done turning
             if line[0] == 'A':
                 return False
+
+            # State variables
             elif line[0] == 'S':
                 line = int(line[2:])
                 if not line == "":
@@ -67,12 +71,15 @@ class env():
                     if self.speed < 0:
                         self.angle += 1
                 return True
+
             elif line[0] == 'D':
                 log.debug(line[2:])
                 return self.read_serial()
+
             elif line[0] == 'I':
                 log.info(line[2:])
                 return self.read_serial()
+
             else:
                 log.debug("Error in message : " + str(line[4:len(line)-5]))
                 

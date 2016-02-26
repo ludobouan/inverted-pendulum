@@ -31,30 +31,28 @@ log = logging.getLogger('root')
 class QAgent(object):
     """Q-Learning agent"""
     def __init__(self, a_dbmg):
-        
         self.epsilon = float(parser.get('Coeffs','epsilon'))
-        
         self.dbmg = a_dbmg
     
     def policy(self, state):
         """
-        Chooses action 
-        Input: state (float)
-        Output: action (int)
+        Returns action and greedy action 
         """
-    
         q_list = [self.getQ(state, i_action) for i_action in self.action_list]
-        maxQ = max(q_list)
-        count = q_list.count(maxQ)
-        if count > 1:
-            best = [i for i in range(len(q_list)) if q_list[i] == maxQ]
-            i = random.choice(best)
-        else:
-            i = q_list.index(maxQ)
- 
-        greedy_action = self.action_list[i]
+        maxQ = max(q_list) # Q value of best action
+        count = q_list.count(maxQ) # number of best actions
 
-        if random.random() < self.epsilon: # exploration
+        if count > 1: # if more than one best action
+            best = [i_n for i_n in range(len(q_list)) if q_list[i_n] == maxQ]
+            best_action_index = random.choice(best)
+        else:
+            best_action_index = q_list.index(maxQ) # index of best action
+ 
+        # greedy action is best action
+        greedy_action = self.action_list[best_action_index]
+
+        # exploration
+        if random.random() < self.epsilon:
             action = random.choice(self.action_list)
         else:
             action = greedy_action
@@ -66,14 +64,16 @@ class QAgent(object):
             i = self.action_list.index(a)
         except ValueError:
             log.error("Action not in the list : " + str(a) + " - " + str(self.action_list) + " - " + str(s))
+        
         try:
             self.dbmg.query("SELECT {0} FROM Qvalue WHERE State = {1}".format(self.action_names[i], s))
         except sqlite3.OperationalError:
             log.debug("Database Error")
+        
         rep = self.dbmg.cur.fetchone()
         if rep is None:
             repo = 0
-            log.error("State not find !")
+            log.error("State not found !")
         else:
             repo = rep[0]
         return repo

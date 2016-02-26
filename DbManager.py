@@ -9,7 +9,7 @@ log = logging.getLogger('root')
 parser = SafeConfigParser()
 parser.read('config.ini')
 
-db_name = parser.get('Main', 'DbName')
+db_name = parser.get('Main', 'dbname')
 
 class DbManager():
     def __init__(self, db):
@@ -34,12 +34,16 @@ class DbManager():
 
             for i in range(17):
                 for j in range(6):
-                    s = i + j*0.01   
+                    state = i + j*0.01   
                     conn.execute("""
                     insert into Qvalue (State, Action1, Action2, Action3, Action4, Action5)
                     values ({0}, 0, 0, 0, 0, 0)
-                    """.format(s))
+                    """.format(state))
             log.debug('Initial data inserted')
+
+    def release(self):
+        self.conn.close()
+        log.debug('Sql connection closed')
 
     def __del__(self):
         try:
@@ -47,7 +51,3 @@ class DbManager():
             log.debug('Sql connection auto closed')
         except:
             log.error("Cant close db")
-    
-    def release(self):
-        self.conn.close()
-        log.debug('Sql connection closed')

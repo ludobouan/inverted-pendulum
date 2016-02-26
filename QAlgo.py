@@ -27,18 +27,15 @@ import matplotlib.pyplot as plt
 # *******************
 def getLogLevel():
     loglevel = parser.get('Main', 'LogLevel')
-    if loglevel == "DEBUG":
-        return logging.DEBUG
-    if loglevel == "INFO":
-        return logging.INFO
-    if loglevel == "ERROR":
-        return logging.ERROR
+    if loglevel == "DEBUG": return logging.DEBUG
+    if loglevel == "INFO": return logging.INFO
+    if loglevel == "ERROR": return logging.ERROR
         
 def general_debug(type, value, traceback):
     log.error("Error : " + str(type) + " - " + str(value))
 
 def main():
-    #Connect to database
+    #Connect to (or create) database
     log.debug(os.path.isfile(db_name))
     if not os.path.isfile(db_name):
         dbmgr = DbManager.DbManager(db_name)
@@ -68,27 +65,28 @@ def main():
     axe.autoscale_view()
     figure.canvas.draw()
     figure.canvas.flush_events()
-    log.debug("Env set")
 
     # Setup enviroment and agents
-    env = enviroment.env()
+    env         = enviroment.env()
     UpperQagent = QAgent.QAgentUpper(dbmgr)
     LowerQagent = QAgent.QAgentLower(dbmgr)
+    log.debug("Env set")
+    log.debug("Agent set")
 
     # Initial conditions
-    agent = LowerQagent
-    state = env.state
-    action, greedy_action = agent.policy(state)
-    log.debug("Agent set")
-    airtime = 0
-    max_airtime=0
+    agent         = LowerQagent
+    state         = env.state
+    airtime       = 0
+    max_airtime   = 0
     follow_reward = 0
-    j = 0
-    i=0
+    step          = 0
+    action, greedy_action = agent.policy(state)
+    pause_time = float(parser.get('Main', 'PauseDuration'))
+    max_steps  = float(parser.get('Main', 'max_steps'))
     log.info("Starting")
     try:
         while True:
-            while i < 150: 
+            while step < max_steps: 
                 log.debug("State: {0}".format(state))
                 log.debug("Action: {0}".format(action))
                 
@@ -138,17 +136,17 @@ def main():
                 log.debug("-----------------")
 
                 #Update variables
-                state = new_state
-                agent = new_agent
+                state  = new_state
+                agent  = new_agent
                 action = new_action
-                i += 1
+                step   += 1
 
-            ### ENTER PAUSE (every 150 steps) ###
+            ### ENTER PAUSE (every `max_steps` steps) ###
             log.info("Pause Started")
             log.info("AIRTIME : {0}".format(max_airtime))
 
             # Averge reward: calculate, save, and graph
-            follow_reward = follow_reward / 150
+            follow_reward = follow_reward / max_steps
             f = open('recompense_moyenne.data', 'a')
             f.write(str(follow_reward) + ":" + str(max_airtime) + "\n")
             f.close()
@@ -160,11 +158,10 @@ def main():
             axe.autoscale_view()
             figure.canvas.draw()
             figure.canvas.flush_events()
-            k += 1
-            j += 1
             log.info("Follow reward : {0}".format(follow_reward))
+            k             += 1
             follow_reward = 0
-            max_airtime = 0
+            max_airtime   = 0
 
             # Reset and prepare next episode
             agent = LowerQagent
@@ -178,9 +175,9 @@ def main():
             parser.write(open('config.ini','w'))
             
             # Delay 
-            time.sleep(float(parser.get('Main', 'PauseDuration')))
+            time.sleep(pause_time)
 
-            i = 0
+            step = 0
             log.info("Pause Ended")
 
     except KeyboardInterrupt:
