@@ -67,10 +67,6 @@ void read_serial()
                 send_state();
             }
             else if (sBuffer.toInt() == 0){
-                delay(10);
-                Serial.println("A:f");
-            }
-            else if (sBuffer.toInt() == -5 || sBuffer.toInt() == 5){
                 Serial.println("A:f");
             }
             else
@@ -86,7 +82,7 @@ void read_serial()
 void motor_step(int sens)
 {
     state = positive_modulo(state + sens, 8);
-    if(stepper.distanceToGo() == 7 || stepper.distanceToGo() == -7){
+    if(stepper.distanceToGo() == 2 || stepper.distanceToGo() == -2){
         Serial.println("A:f");
     }
     count_motor = 0;
@@ -158,7 +154,7 @@ inline int positive_modulo(int i, int n)
 void need_to_stop()
 {  
     count_motor++;
-    if(count_motor == 10)
+    if(count_motor == 5)
     {
         digitalWrite(pinA_power,LOW);
         digitalWrite(pinB_power,LOW);
@@ -174,7 +170,7 @@ void need_to_reinit()
         encodeur.write(0);
         angle_speed = 0;
         angle = 0;
-        Serial.println("I:Encoder reset");
+        Serial.println("D:Encoder reset");
     }
 }
 

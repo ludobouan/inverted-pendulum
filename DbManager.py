@@ -30,7 +30,6 @@ class DbManager():
             with open(schema_filename, 'rt') as f:
                 schema = f.read()
             conn.executescript(schema)
-            log.debug('Table created')
 
             for i in range(17):
                 for j in range(6):

@@ -47,8 +47,12 @@ class env():
         self.state = self.get_state()[0]
 
     def get_reward(self):
-        return (math.cos((self.angle*math.pi)/300)-1 + math.exp(-25*(((self.angle*math.pi)/300)**2)))
-        #return math.cos((self.angle + 3 * self.speed)*math.pi/300)
+        for el in self.angles:
+            line = el.split(':')
+            if self.angle >= int(line[0]) and self.angle < int(line[1]):
+                return int(line[4])
+        log.error("Angle out of range : " + str(self.angle))
+        return 0
         
     def read_serial(self):
         if ser_connected:
@@ -113,7 +117,10 @@ class env():
                 pass
             angle, isUpper = self.getAngle(self.angle)
             speed = self.getSpeed(self.speed)
-            state = angle + 0.01 * speed
+            try:
+                state = angle + 0.01 * speed
+            except TypeError:
+                log.error("Error in types : " + str(angle) + " - " + str(speed))
             return state, isUpper
             
 
