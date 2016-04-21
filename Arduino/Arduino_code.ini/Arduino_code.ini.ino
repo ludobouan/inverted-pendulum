@@ -25,9 +25,9 @@ Timer t;
 
 // Variables générales
 String sBuffer = "";
+bool blocked = false;
 int state = 0;
 int count_motor = 0;
-int count_angle = 0;
 int angle = 0;
 int angle_speed = 0;
 
@@ -66,12 +66,20 @@ void read_serial()
             if(sBuffer == "S:gs\n"){
                 send_state();
             }
+            else if(sBuffer == "E:R\n"){
+                reinit_encodeur();
+            }
+            else if (sBuffer == "L:T\n"){
+                blocked = true;
+            }
+            else if (sBuffer == "L:F\n"){
+                blocked = false;
+            }
             else if (sBuffer.toInt() == 0){
                 Serial.println("A:f");
             }
             else
             {
-                Serial.println("D:" + String(stepper.distanceToGo()));
                 stepper.move(sBuffer.toInt());
             }
             sBuffer = "";  
@@ -82,9 +90,6 @@ void read_serial()
 void motor_step(int sens)
 {
     state = positive_modulo(state + sens, 8);
-    if(stepper.distanceToGo() == 2 || stepper.distanceToGo() == -2){
-        Serial.println("A:f");
-    }
     count_motor = 0;
     switch(state)
     {
@@ -144,6 +149,15 @@ void motor_step(int sens)
             digitalWrite(pinB_dir,HIGH);
             break;
     }
+    if(stepper.distanceToGo() == 3 || stepper.distanceToGo() == -3){
+        Serial.println("A:f");
+    }
+    if (blocked == false && (stepper.distanceToGo() == 1 || stepper.distanceToGo() == -1)){
+        digitalWrite(pinA_power,LOW);
+        digitalWrite(pinB_power,LOW);
+        digitalWrite(pinA_dir,LOW);
+        digitalWrite(pinB_dir,LOW);
+    }
 }
 
 inline int positive_modulo(int i, int n)
@@ -154,7 +168,7 @@ inline int positive_modulo(int i, int n)
 void need_to_stop()
 {  
     count_motor++;
-    if(count_motor == 5)
+    if(count_motor == 10)
     {
         digitalWrite(pinA_power,LOW);
         digitalWrite(pinB_power,LOW);
@@ -163,30 +177,23 @@ void need_to_stop()
     }
 }
 
-void need_to_reinit()
+void reinit_encodeur()
 {  
-    if(count_angle > 50 && count_angle < 70)
-    {
-        encodeur.write(0);
-        angle_speed = 0;
-        angle = 0;
-        Serial.println("D:Encoder reset");
-    }
+    encodeur.write(0);
+    angle_speed = 0;
+    angle = -300;
+    Serial.println("D:Encoder reset");
 }
 
 void update_state()
 {  
     if (angle != positive_modulo(encodeur.read(), 2400)/4 - 300)
     {
-        count_angle = 0;
         int lastpos = angle;
         angle = positive_modulo(encodeur.read(), 2400)/4 - 300;
         angle_speed = angle - lastpos;
         if(angle_speed > 400){(angle_speed -= 600) * -1;}
         if(angle_speed < -400){(angle_speed += 600) * -1;}
-    }
-    else{
-        count_angle++;
     }
 }
 
@@ -196,8 +203,7 @@ void send_state()
     if(angle_speed < -100){angle_speed = -100;}
     if(angle > 299){angle = 299;}
     if(angle < -300){angle = -300;}
-    long value = long(angle)*10000 + long(angle_speed);
-    Serial.println("S:" + String(value));
+    Serial.println("S:" + String(angle) + ":" + String(angle_speed));
 }
 
 /* ******************
@@ -214,13 +220,12 @@ void setup()
     pinMode(pinB_dir, OUTPUT);
   
     stepper.setMaxSpeed(1200.0);
-    stepper.setAcceleration(900.0);
-    stepper.setSpeed(1000.0);
+    stepper.setAcceleration(1000.0);
+    stepper.setSpeed(900.0);
   
     t.every(5, read_serial);
     t.every(10, need_to_stop);
-    t.every(2000, need_to_reinit);
-    t.every(100, update_state);
+    t.every(50, update_state);
   
     Serial.println("I:Arduino Launched");
 }
@@ -234,3 +239,4 @@ void loop()
     stepper.run();
     t.update();
 }
+
